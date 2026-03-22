@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "pages:build": "opennextjs-cloudflare build && cp -r .open-next/assets/* .open-next/ && (mv .open-next/worker.js .open-next/_worker.js 2>/dev/null || true) && echo '{\"version\":1,\"include\":[\"/*\"],\"exclude\":[\"/_next/static/*\",\"/favicon.ico\",\"/*.svg\",\"/*.js\",\"/*.json\",\"/icons/*\",\"/fonts/*\",\"/BUILD_ID\"]}' > .open-next/_routes.json",
-    "pages:deploy": "npx wrangler pages deploy .open-next",
+    "build:pages": "opennextjs-cloudflare build && cp -r .open-next/assets/* .open-next/ && (mv .open-next/worker.js .open-next/_worker.js 2>/dev/null || true) && echo '{\"version\":1,\"include\":[\"/*\"],\"exclude\":[\"/_next/static/*\",\"/favicon.ico\",\"/*.svg\",\"/*.js\",\"/*.json\",\"/icons/*\",\"/fonts/*\",\"/BUILD_ID\"]}' > .open-next/_routes.json",
+    "deploy:pages": "npx wrangler pages deploy .open-next",
     "preview": "opennextjs-cloudflare preview",
     "start": "next start",
     "lint": "eslint"
