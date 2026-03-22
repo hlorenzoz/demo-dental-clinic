@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "build:pages": "opennextjs-cloudflare build && cp -r .open-next/assets/* .open-next/ && (mv .open-next/worker.js .open-next/_worker.js 2>/dev/null || true) && echo '{\"version\":1,\"include\":[\"/*\"],\"exclude\":[\"/_next/static/*\",\"/favicon.ico\",\"/*.svg\",\"/*.js\",\"/*.json\",\"/icons/*\",\"/fonts/*\",\"/BUILD_ID\"]}' > .open-next/_routes.json",
-    "deploy:pages": "npx wrangler pages deploy .open-next",
+    "deploy:pages": "npx wrangler pages deploy .open-next --project-name template-website-dental-minimalist-teal --compatibility-date 2026-03-22 --compatibility-flag nodejs_compat",
     "preview": "opennextjs-cloudflare preview",
     "start": "next start",
     "lint": "eslint"
