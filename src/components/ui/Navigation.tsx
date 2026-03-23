@@ -15,9 +15,9 @@ export function Navigation() {
   const pathname = usePathname();
 
   return (
-    <nav className="sticky top-0 z-50 w-full px-8 py-6 flex justify-between items-center glass">
-      <Link href="/" className="text-2xl font-serif text-primary font-bold tracking-tight">
-        Aura<span className="text-primary-container">.Dental</span>
+    <nav className="sticky top-0 z-50 w-full px-8 py-5 flex justify-between items-center glass border-b border-primary/5">
+      <Link href="/" className="text-[22px] font-serif text-primary font-bold tracking-tight">
+        Ecladent<span className="text-secondary/60 text-lg">.</span>
       </Link>
       
       <div className="hidden md:flex gap-12 items-center">
@@ -34,7 +34,7 @@ export function Navigation() {
         ))}
         <Link 
           href="/contact"
-          className="bg-gradient-to-br from-primary to-primary-container text-white px-8 py-3 rounded-lg text-sm font-bold shadow-soft hover:opacity-90 transition-all"
+          className="bg-primary text-white px-8 py-3.5 rounded-full text-[13px] font-bold shadow-md hover:bg-primary-container transition-all uppercase tracking-widest"
         >
           Book Appointment
         </Link>

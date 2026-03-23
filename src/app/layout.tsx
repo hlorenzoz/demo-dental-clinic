@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import { Noto_Serif, Manrope } from "next/font/google";
+import { Plus_Jakarta_Sans, Manrope } from "next/font/google";
 import "./globals.css";
 
-const notoSerif = Noto_Serif({
-  variable: "--font-noto-serif",
+const plusJakartaSans = Plus_Jakarta_Sans({
+  variable: "--font-plus-jakarta-sans",
   subsets: ["latin"],
-  weight: ["400", "700"],
 });
 
 const manrope = Manrope({
@@ -14,8 +13,8 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Aura Dental Collective | The Restorative Sanctuary",
-  description: "A luxury clinical experience where restorative art meets advanced dental precision.",
+  title: "Ecladent | The Clinical Sanctuary Mill Hill",
+  description: "Advanced restorative & emergency dentistry in a calm, women-owned sanctuary. LGBT-friendly and safe space.",
 };
 
 import { Navigation } from "@/components/ui/Navigation";
@@ -29,9 +28,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${notoSerif.variable} ${manrope.variable} h-full antialiased`}
+      className={`${plusJakartaSans.variable} ${manrope.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[#F9F9F9] font-manrope">
+      <body className="min-h-full flex flex-col bg-[#F8FAFA] font-sans">
         <Navigation />
         <main className="flex-grow">{children}</main>
         <Footer />

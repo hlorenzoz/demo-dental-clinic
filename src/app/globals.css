@@ -1,13 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --background: #F9F9F9;
-  --foreground: #1A1C1C;
-  --primary: #006565;
-  --primary-container: #008080;
-  --surface: #F9F9F9;
-  --surface-low: #F3F3F3;
-  --surface-lowest: #FFFFFF;
+  --background: #f8fafa;
+  --foreground: #191c1d;
+  --primary: #004c4c;
+  --primary-container: #006666;
+  --surface: #f8fafa;
+  --surface-low: #f2f4f4;
+  --surface-lowest: #ffffff;
+  --tertiary: #6a3516;
 }
 
 @theme {
@@ -18,11 +19,11 @@
   --color-surface: var(--surface);
   --color-surface-low: var(--surface-low);
   --color-surface-lowest: var(--surface-lowest);
+  --color-tertiary: var(--tertiary);
   
-  --font-serif: var(--font-noto-serif);
-  --font-sans: var(--font-manrope);
+  --font-serif: var(--font-manrope);
+  --font-sans: var(--font-plus-jakarta-sans);
   
-  /* Adding these for shandcn compatibility if needed */
   --color-border: var(--primary)/20;
 }
 
