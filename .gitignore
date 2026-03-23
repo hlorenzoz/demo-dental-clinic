@@ -39,4 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-\ncf_token.txt
+# local development and agents
+.home/
+.npm_cache/
+.npm-cache/
+.tmp/
+.npm_tmp/
+.9ebf3fdd5f4ffdf4-00000000.hm
+cf_token.txt

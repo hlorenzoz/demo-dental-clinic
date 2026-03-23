@@ -1,6 +1,7 @@
 {
-  "name": "template_website_dental_minimalist_teal",
+  "name": "dental_clinic_1_minimalist",
   "version": "0.1.1",
+  "description": "Website Template for Dental Clinic",
   "private": true,
   "scripts": {
     "dev": "next dev",
