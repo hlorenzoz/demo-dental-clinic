@@ -42,7 +42,8 @@ const serviceSchema = {
   "serviceType": "Dentistry",
   "provider": {
     "@type": "LocalBusiness",
-    "name": "Ecladent Sanctuary"
+    "name": "Ecladent Sanctuary - Mill Hill Dental Clinic",
+    "priceRange": "££-£££"
   },
   "areaServed": {
     "@type": "City",

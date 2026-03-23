@@ -47,10 +47,11 @@ export default function ContactPage() {
   const contactData = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Ecladent Sanctuary",
+    "name": "Ecladent Sanctuary - Mill Hill Dental Clinic",
     "image": "https://cdn.hlorenzoz.com/dental_clinic_1_minimalist/clinic_interior.webp",
     "telephone": "+44 20 8959 9392",
     "email": "hello@ecladent.co.uk",
+    "priceRange": "££-£££",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "53 Brockenhurst Gardens",

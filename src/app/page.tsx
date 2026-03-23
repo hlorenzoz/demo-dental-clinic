@@ -27,6 +27,7 @@ export default function Home() {
     "@id": "https://dental-clinic-1-minimalist.pages.dev/",
     "url": "https://dental-clinic-1-minimalist.pages.dev/",
     "telephone": "+44 20 8959 9392",
+    "priceRange": "££-£££",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "53 Brockenhurst Gardens",
