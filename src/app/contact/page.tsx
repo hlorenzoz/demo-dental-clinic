@@ -181,7 +181,7 @@ export default function ContactPage() {
                     <div key={idx} className="flex justify-between items-center py-4 border-b border-zinc-200/50 last:border-0 group">
                       <span className="text-sm font-bold text-foreground group-hover:text-primary transition-colors">{item.day}</span>
                       <div className="text-right">
-                        <span className="text-sm font-light text-[#6F7979]">{item.hours}</span>
+                        <span className="text-sm font-light text-[#4A5453]">{item.hours}</span>
                         {item.note && (
                           <span className="block text-[9px] font-bold text-primary uppercase tracking-widest mt-1">
                             {item.note}
@@ -227,13 +227,13 @@ export default function ContactPage() {
               >
                 <div className="mb-16">
                   <h2 className="text-4xl md:text-5xl font-serif text-foreground mb-6 italic">Secure Assessment</h2>
-                  <p className="text-lg font-light text-[#6F7979]">Complete your clinical profile for priority consideration.</p>
+                  <p className="text-lg font-light text-[#4A5453]">Complete your clinical profile for priority consideration.</p>
                 </div>
 
                 <form className="space-y-12">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                     <div className="space-y-4">
-                      <label htmlFor="full-name" className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#6F7979]">Full Name</label>
+                      <label htmlFor="full-name" className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#4A5453]">Full Name</label>
                       <input 
                         id="full-name"
                         type="text" 
@@ -242,7 +242,7 @@ export default function ContactPage() {
                       />
                     </div>
                     <div className="space-y-4">
-                      <label htmlFor="phone-secure" className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#6F7979]">Phone Secure</label>
+                      <label htmlFor="phone-secure" className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#4A5453]">Phone Secure</label>
                       <input 
                         id="phone-secure"
                         type="tel" 
@@ -253,7 +253,7 @@ export default function ContactPage() {
                   </div>
 
                   <div className="space-y-4">
-                    <label className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#6F7979]">Clinical Interest</label>
+                    <label className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#4A5453]">Clinical Interest</label>
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                        {['Implants', 'Invisalign', 'Hygiene', 'Emergency', 'Cosmetic'].map((item) => (
                          <label key={item} className="flex items-center gap-3 p-4 bg-surface-low rounded-xl cursor-pointer hover:bg-primary/5 transition-colors">
@@ -265,7 +265,7 @@ export default function ContactPage() {
                   </div>
 
                   <div className="space-y-4">
-                    <label htmlFor="clinical-notes" className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#6F7979]">Clinical Notes</label>
+                    <label htmlFor="clinical-notes" className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#4A5453]">Clinical Notes</label>
                     <textarea 
                       id="clinical-notes"
                       rows={5} 
@@ -351,6 +351,7 @@ export default function ContactPage() {
                       fill
                       className="object-cover group-hover:scale-110 transition-transform duration-1000"
                       sizes="(max-width: 768px) 100vw, 33vw"
+                      priority={i < 3}
                     />
                  </motion.div>
                ))}

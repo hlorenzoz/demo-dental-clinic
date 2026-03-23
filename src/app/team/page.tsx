@@ -195,6 +195,7 @@ export default function TeamPage() {
                           fill
                           className="object-cover"
                           sizes="(max-width: 1024px) 100vw, 50vw"
+                          priority={i === 0}
                         />
                       </div>
                    </div>
@@ -247,7 +248,7 @@ export default function TeamPage() {
                       {h.role}
                     </span>
                     <h4 className="text-2xl font-serif text-foreground mb-4 italic">{h.name}</h4>
-                    <p className="text-sm text-[#6F7979] font-light leading-relaxed mb-8">
+                    <p className="text-sm text-[#4A5453] font-light leading-relaxed mb-8">
                        <span className="font-bold text-foreground">{h.specialty}:</span> {h.focus}
                     </p>
                     <div className="flex items-center gap-3 text-primary font-bold text-xs uppercase tracking-widest opacity-60">
@@ -266,7 +267,7 @@ export default function TeamPage() {
             <h2 className="text-4xl md:text-6xl font-serif text-foreground mb-10 tracking-tight leading-tight">
                Experience <br /> <span className="italic">Excellence.</span>
             </h2>
-            <p className="text-xl text-[#6F7979] font-light leading-relaxed mb-16 mx-auto max-w-lg">
+            <p className="text-xl text-[#4A5453] font-light leading-relaxed mb-16 mx-auto max-w-lg">
                Secure your consultation with our clinical specialists today.
             </p>
             <Link href="/contact" className="inline-flex items-center gap-6 py-6 px-16 bg-primary text-white rounded-full font-bold text-xl shadow-xl hover:translate-y-[-4px] hover:shadow-2xl transition-all group">

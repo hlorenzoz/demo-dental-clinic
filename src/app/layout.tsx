@@ -30,6 +30,10 @@ export default function RootLayout({
       lang="en"
       className={`${plusJakartaSans.variable} ${manrope.variable} h-full antialiased`}
     >
+      <head>
+        <link rel="preconnect" href="https://cdn.hlorenzoz.com" />
+        <link rel="dns-prefetch" href="https://cdn.hlorenzoz.com" />
+      </head>
       <body className="min-h-full flex flex-col bg-[#F8FAFA] font-sans">
         <Navigation />
         <main className="flex-grow">{children}</main>

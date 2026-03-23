@@ -109,7 +109,7 @@ export default function FAQPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-xl md:text-2xl font-light text-[#6F7979] max-w-xl leading-relaxed"
+                className="text-xl md:text-2xl font-light text-[#4A5453] max-w-xl leading-relaxed"
               >
                 Everything you need to know about starting your clinical 
                 journey within our Mill Hill sanctuary.
@@ -171,7 +171,7 @@ export default function FAQPage() {
                       }}
                       className="overflow-hidden"
                     >
-                      <p className="text-lg font-light text-[#6F7979] leading-relaxed pb-4">
+                      <p className="text-lg font-light text-[#4A5453] leading-relaxed pb-4">
                         {faq.a}
                       </p>
                     </motion.div>
@@ -179,7 +179,7 @@ export default function FAQPage() {
                   <div className={`w-12 h-12 rounded-full flex items-center justify-center shrink-0 border transition-all duration-500 ${
                     openIndex === index 
                       ? 'bg-primary border-primary text-white rotate-180' 
-                      : 'bg-white border-black/5 text-[#6F7979]'
+                      : 'bg-white border-black/5 text-[#4A5453]'
                   }`}>
                     {openIndex === index ? <Minus className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
                   </div>

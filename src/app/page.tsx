@@ -106,6 +106,7 @@ export default function Home() {
               fill
               className="object-cover opacity-60 lg:opacity-100 lg:translate-x-1/4"
               priority
+              fetchPriority="high"
               sizes="100vw"
             />
             {/* Editorial Gradient Overlay */}
@@ -190,7 +191,7 @@ export default function Home() {
               </div>
               <p className="text-4xl md:text-5xl font-serif text-foreground mb-2">4.9 / 5.0</p>
               <p className="text-primary font-bold uppercase tracking-widest text-xs">Excellence Awarded</p>
-              <p className="text-[#6F7979] text-sm mt-4">Based on 391+ patient reviews</p>
+              <p className="text-[#4A5453] text-sm mt-4">Based on 391+ patient reviews</p>
             </motion.div>
 
             <div className="h-[1px] w-full lg:h-24 lg:w-[1px] bg-primary/10"></div>
@@ -323,7 +324,7 @@ export default function Home() {
                   digitally before we start treatment.
                 </p>
                 <Link href="/services/cosmetic" className="text-primary font-bold flex items-center gap-2 text-sm uppercase tracking-widest">
-                  Learn More
+                  Observe Smile Design Results
                   <ChevronRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -368,7 +369,7 @@ export default function Home() {
                 Botox and anti-wrinkle treatments delivered with medical precision.
               </p>
               <Link href="/services/aesthetics" className="text-primary font-bold flex items-center gap-2 text-sm uppercase tracking-widest">
-                Learn More
+                Observe Aesthetic Standards
                 <ChevronRight className="w-4 h-4" />
               </Link>
             </motion.div>
@@ -452,12 +453,12 @@ export default function Home() {
             <div className="flex flex-wrap gap-12">
               <div>
                 <p className="text-primary font-serif italic text-4xl mb-4 leading-none">Calm</p>
-                <p className="text-[#6F7979] text-[10px] uppercase tracking-widest font-bold">Atmosphere Focused</p>
+                <p className="text-[#4A5453] text-[10px] uppercase tracking-widest font-bold">Atmosphere Focused</p>
               </div>
               <div className="w-[1px] h-16 bg-primary/10 hidden sm:block"></div>
               <div>
                 <p className="text-primary font-serif italic text-4xl mb-4 leading-none">Safe</p>
-                <p className="text-[#6F7979] text-[10px] uppercase tracking-widest font-bold">Informed Consent</p>
+                <p className="text-[#4A5453] text-[10px] uppercase tracking-widest font-bold">Informed Consent</p>
               </div>
             </div>
           </motion.div>
@@ -485,7 +486,7 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="font-bold text-foreground mb-1 uppercase tracking-wider text-xs">Our Location</p>
-                    <p className="text-[#6F7979] font-light">53 Brockenhurst Gardens,<br />London NW7 2JY</p>
+                    <p className="text-[#4A5453] font-light">53 Brockenhurst Gardens,<br />London NW7 2JY</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
@@ -494,7 +495,7 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="font-bold text-foreground mb-1 uppercase tracking-wider text-xs">Speak with us</p>
-                    <p className="text-[#6F7979] font-light">+44 20 8959 9392</p>
+                    <p className="text-[#4A5453] font-light">+44 20 8959 9392</p>
                   </div>
                 </div>
                 <div className="pt-8 border-t border-primary/10">
@@ -529,7 +530,7 @@ export default function Home() {
                 ].map((item, i) => (
                   <div key={i} className="flex justify-between items-center py-2 border-b border-primary/5 last:border-0">
                     <span className="text-sm font-bold text-foreground uppercase tracking-widest">{item.day}</span>
-                    <span className={`text-sm ${item.closed ? 'text-[#ffb690] font-bold italic' : 'text-[#6F7979] font-light'}`}>
+                    <span className={`text-sm ${item.closed ? 'text-[#ffb690] font-bold italic' : 'text-[#4A5453] font-light'}`}>
                       {item.hours}
                     </span>
                   </div>
@@ -559,7 +560,7 @@ export default function Home() {
                <div className="absolute inset-0 flex items-center justify-center p-8 pointer-events-none">
                  <div className="text-center rounded-2xl p-6 bg-surface-lowest/60 backdrop-blur-md border border-white/20">
                    <p className="text-primary font-serif italic text-2xl mb-4 underline decoration-[#6a3516]/30 px-4">Mill Hill Sanctuary</p>
-                   <p className="text-[10px] text-[#6F7979] uppercase tracking-widest font-bold px-4">Located in the heart of NW7 London</p>
+                   <p className="text-[10px] text-[#4A5453] uppercase tracking-widest font-bold px-4">Located in the heart of NW7 London</p>
                  </div>
                </div>
              </motion.div>

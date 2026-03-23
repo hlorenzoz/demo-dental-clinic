@@ -8,7 +8,7 @@ export function Footer() {
           <Link href="/" className="text-3xl font-serif text-primary font-bold mb-8 block">
             Ecladent<span className="text-secondary/60">.</span>
           </Link>
-          <p className="text-[#6F7979] text-base leading-relaxed max-w-sm font-light">
+          <p className="text-[#4A5453] text-base leading-relaxed max-w-sm font-light">
             A restorative sanctuary where clinical excellence meets the art of dentistry. 
             Proudly women-owned, inclusive, and dedicated to Mill Hill's oral health.
           </p>
