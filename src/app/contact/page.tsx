@@ -350,6 +350,7 @@ export default function ContactPage() {
                       alt="Clinic Environment"
                       fill
                       className="object-cover group-hover:scale-110 transition-transform duration-1000"
+                      sizes="(max-width: 768px) 100vw, 33vw"
                     />
                  </motion.div>
                ))}
