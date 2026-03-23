@@ -6,15 +6,15 @@ A luxury clinical experience where restorative art meets advanced dental precisi
 - **Primary Color**: `#006565`
 - **Typography**: Noto Serif / Manrope
 
-## 🚀 Deployment (Cloudflare Pages)
+## 🚀 Deployment (Vercel)
 
-This project is optimized for Cloudflare Pages. Since it's already on GitHub:
+This project is optimized for deployment on Vercel:
 
-1. Go to [Cloudflare Pages](https://dash.cloudflare.com/?to=/:account/pages).
-2. Click **Create Application** > **Connect to Git**.
-3. Select this repository: `template-website-dental-minimalist-teal`.
+1. Connect your GitHub account to [Vercel](https://vercel.com).
+2. Click **Add New** > **Project**.
+3. Import the repository: `dental-clinic-1-minimalist`.
 4. Framework Preset: **Next.js**.
-5. Click **Save and Deploy**.
+5. Click **Deploy**.
 
 ## 🛠️ Local Development
 

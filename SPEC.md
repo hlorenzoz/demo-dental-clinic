@@ -9,7 +9,7 @@ A highly polished, conversion-optimized Next.js web application for Aura Dental 
 - **Components**: React Server Components (RSC) where possible.
 - **Animations**: Framer Motion.
 - **Testing**: Playwright (E2E) and Vitest (Unit).
-- **Deployment**: Cloudflare Pages.
+- **Deployment**: Vercel.
 
 ## 3. Required Pages & Routing
 1. `/` (Home)
@@ -36,4 +36,4 @@ Before any component is built, Playwright tests must be written to verify:
 - `DESIGN.md` rules (e.g., absence of hard borders) are respected where testable.
 
 ## 5. Deployment Pipeline
-The application will be deployed automatically to Cloudflare Pages upon push to the `main` branch of its respective GitHub repository.
+The application will be deployed automatically to Vercel upon push to the `main` branch of its respective GitHub repository.
