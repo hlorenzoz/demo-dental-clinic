@@ -348,7 +348,11 @@ export default function Home() {
               <p className="text-white/70 font-light leading-relaxed mb-8">
                 Broken tooth? Acute pain? We reserve priority slots daily for rapid relief.
               </p>
-              <Link href="/services/emergency" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-primary transition-all">
+              <Link 
+                href="/services/emergency" 
+                className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-primary transition-all"
+                aria-label="Access Emergency Care Stabilization"
+              >
                 <ChevronRight className="w-5 h-5" />
               </Link>
             </motion.div>
@@ -360,7 +364,7 @@ export default function Home() {
             >
               <Heart className="w-12 h-12 text-primary mb-8" />
               <h3 className="text-3xl font-serif text-foreground mb-6 leading-tight">Facial <br />Aesthetics</h3>
-              <p className="text-[#6F7979] font-light leading-relaxed mb-8">
+              <p className="text-[#4A5453] font-light leading-relaxed mb-8">
                 Botox and anti-wrinkle treatments delivered with medical precision.
               </p>
               <Link href="/services/aesthetics" className="text-primary font-bold flex items-center gap-2 text-sm uppercase tracking-widest">
@@ -377,7 +381,7 @@ export default function Home() {
               <div className="md:w-1/2 flex flex-col justify-center">
                 <ShieldCheck className="w-12 h-12 text-primary mb-8" />
                 <h3 className="text-4xl font-serif text-foreground mb-6">Preventative Care</h3>
-                <p className="text-[#6F7979] font-light leading-relaxed">
+                <p className="text-[#4A5453] font-light leading-relaxed">
                   Our advanced hygiene protocols (Airflow) provide a sensory, 
                   comfortable alternative to traditional cleaning.
                 </p>
@@ -385,7 +389,7 @@ export default function Home() {
               <div className="md:w-1/2 relative rounded-2xl overflow-hidden bg-primary/5 min-h-[200px]">
                 <div className="p-8 text-center flex flex-col h-full justify-center">
                   <p className="text-primary font-serif italic text-2xl mb-2">"Corinne's Touch"</p>
-                  <p className="text-[10px] uppercase tracking-widest font-bold text-[#6F7979]">Patient Favorite Service</p>
+                  <p className="text-[10px] uppercase tracking-widest font-bold text-[#4A5453]">Patient Favorite Service</p>
                 </div>
               </div>
             </motion.div>
@@ -514,7 +518,7 @@ export default function Home() {
             >
               <div className="flex items-center gap-3 mb-10">
                 <Clock className="w-6 h-6 text-primary" />
-                <h4 className="text-xl font-serif text-foreground">Clinic Hours</h4>
+                <h3 className="text-xl font-serif text-foreground">Clinic Hours</h3>
               </div>
               <div className="space-y-4">
                 {[
@@ -586,7 +590,7 @@ export default function Home() {
           <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="flex flex-col gap-3 group">
-                <label htmlFor="hp-full-name" className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#6F7979] ml-1">Full Name</label>
+                <label htmlFor="hp-full-name" className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#4A5453] ml-1">Full Name</label>
                 <input 
                   id="hp-full-name"
                   type="text" 
@@ -595,7 +599,7 @@ export default function Home() {
                 />
               </div>
               <div className="flex flex-col gap-3 group">
-                <label htmlFor="hp-phone-number" className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#6F7979] ml-1">Phone Number</label>
+                <label htmlFor="hp-phone-number" className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#4A5453] ml-1">Phone Number</label>
                 <input 
                   id="hp-phone-number"
                   type="tel" 
@@ -605,8 +609,11 @@ export default function Home() {
               </div>
             </div>
             <div className="flex flex-col gap-3 group">
-              <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#6F7979] ml-1">Clinical Interest</label>
-              <select className="bg-surface-low border-none rounded-2xl p-5 focus:ring-1 focus:ring-primary focus:bg-white appearance-none transition-all outline-none text-[#3F4948]">
+              <label htmlFor="hp-clinical-interest" className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#4A5453] ml-1">Clinical Interest</label>
+              <select 
+                id="hp-clinical-interest"
+                className="bg-surface-low border-none rounded-2xl p-5 focus:ring-1 focus:ring-primary focus:bg-white appearance-none transition-all outline-none text-[#3F4948]"
+              >
                 <option>General Assessment</option>
                 <option>Emergency Care</option>
                 <option>Cosmetic Smile Transformation</option>

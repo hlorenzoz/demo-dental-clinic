@@ -94,7 +94,7 @@ export default function AboutPage() {
                 </div>
                 <div>
                   <p className="text-sm font-bold text-foreground">Established in Mill Hill</p>
-                  <p className="text-xs text-[#6F7979] uppercase tracking-widest mt-1">NW7 London Heritage</p>
+                  <p className="text-xs text-[#4A5453] uppercase tracking-widest mt-1">NW7 London Heritage</p>
                 </div>
               </div>
             </motion.div>
@@ -136,10 +136,10 @@ export default function AboutPage() {
                  <ShieldCheck className="w-10 h-10 text-primary" />
                  <h2 className="text-3xl font-serif text-foreground italic">Restorative Artistry</h2>
               </div>
-              <h3 className="text-4xl md:text-7xl font-serif text-foreground leading-[1.1] tracking-tight">
+              <h2 className="text-4xl md:text-7xl font-serif text-foreground leading-[1.1] tracking-tight">
                 Owned by Women. <br />
-                Guided by <span className="italic">Empathy.</span>
-              </h3>
+                Guided by <span className="italic text-primary">Empathy.</span>
+              </h2>
               <div className="space-y-8 text-xl text-[#3F4948] font-light leading-relaxed">
                 <p>
                   Ecladent Sanctuary was founded as a departure from the "industrial-scale" corporate 
@@ -175,7 +175,7 @@ export default function AboutPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent pointer-events-none" />
               <div className="absolute bottom-12 left-12 right-12 p-10 bg-surface-lowest/80 backdrop-blur-xl rounded-3xl border border-white/20">
                  <p className="text-primary font-serif italic text-2xl mb-2">"Precision clinical heritage meets a human, artisanal touch."</p>
-                 <p className="text-[10px] font-bold uppercase tracking-widest text-[#6F7979]">The Mill Hill Commitment</p>
+                 <p className="text-[10px] font-bold uppercase tracking-widest text-[#4A5453]">The Mill Hill Commitment</p>
               </div>
             </motion.div>
 
@@ -231,8 +231,8 @@ export default function AboutPage() {
                className="p-12 bg-surface-lowest rounded-[2.5rem] border border-primary/5 shadow-sm hover:shadow-xl hover:border-primary/10 transition-all group"
              >
                 <div className="text-primary mb-10 group-hover:scale-110 transition-transform origin-left">{pillar.icon}</div>
-                <h4 className="text-2xl font-serif text-foreground mb-6">{pillar.title}</h4>
-                <p className="text-[#6F7979] font-light leading-relaxed">{pillar.desc}</p>
+                <h3 className="text-2xl font-serif text-foreground mb-6">{pillar.title}</h3>
+                <p className="text-[#4A5453] font-light leading-relaxed">{pillar.desc}</p>
              </motion.div>
            ))}
         </div>
@@ -250,7 +250,7 @@ export default function AboutPage() {
                     </h2>
                 </div>
                 <div className="lg:mb-3">
-                   <p className="text-[#6F7979] text-xl font-light italic border-l-2 border-primary/20 pl-8 py-2">
+                   <p className="text-[#4A5453] text-xl font-light italic border-l-2 border-primary/20 pl-8 py-2">
                      "We curate clinicians who combine technical mastery <br /> with the heart of the sanctuary."
                    </p>
                 </div>

@@ -176,7 +176,7 @@ export default function ServicesPage() {
                     <Activity className="w-5 h-5" />
                     <span className="font-bold text-xs uppercase tracking-[0.3em]">Latest Tech</span>
                   </div>
-                  <p className="text-sm font-light text-[#6F7979] italic leading-relaxed">
+                  <p className="text-sm font-light text-[#4A5453] italic leading-relaxed">
                     "Every procedure is Itero-scanned and digitally planned before clinical execution begins."
                   </p>
                </div>
@@ -308,14 +308,14 @@ export default function ServicesPage() {
                     <Smile className="w-10 h-10 text-primary shrink-0" />
                     <div>
                       <h4 className="font-bold text-foreground mb-2 italic">Invisalign® Elite</h4>
-                      <p className="text-base text-[#6F7979]">Strategic tooth movement protocols designed for comfort and rapid results.</p>
+                      <p className="text-base text-[#4A5453]">Strategic tooth movement protocols designed for comfort and rapid results.</p>
                     </div>
                   </div>
                   <div className="flex gap-6">
                     <Stethoscope className="w-10 h-10 text-primary shrink-0" />
                     <div>
                       <h4 className="font-bold text-foreground mb-2 italic">Itero® 3D Scanning</h4>
-                      <p className="text-base text-[#6F7979]">Visualize your results before we even start. Digital precision for total confidence.</p>
+                      <p className="text-base text-[#4A5453]">Visualize your results before we even start. Digital precision for total confidence.</p>
                     </div>
                   </div>
                </div>
