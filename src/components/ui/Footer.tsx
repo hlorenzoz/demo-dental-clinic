@@ -28,7 +28,7 @@ export function Footer() {
            <h4 className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#AFCCCB] mb-8">Services</h4>
            <ul className="space-y-4 text-sm text-[#3F4948]">
              <li><Link href="/services/restorative" className="hover:text-primary transition-colors">Restorative Art</Link></li>
-             <li><Link href="/services/invisalign" className="hover:text-primary transition-colors">Invisalign</Link></li>
+             <li><Link href="/services/cosmetic" className="hover:text-primary transition-colors">Invisalign</Link></li>
              <li><Link href="/services/aesthetics" className="hover:text-primary transition-colors">Facial Aesthetics</Link></li>
              <li><Link href="/services/emergency" className="hover:text-primary transition-colors">Emergency Care</Link></li>
            </ul>

@@ -16,8 +16,60 @@ import {
   ShieldCheck,
   UserCheck
 } from 'lucide-react';
+import JsonLd from '@/components/ui/JsonLd';
 
 export default function Home() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Ecladent Sanctuary - Mill Hill Dental Clinic",
+    "image": "https://cdn.hlorenzoz.com/dental_clinic_1_minimalist/hero_sanctuary.webp",
+    "@id": "https://dental-clinic-1-minimalist.pages.dev/",
+    "url": "https://dental-clinic-1-minimalist.pages.dev/",
+    "telephone": "+44 20 8959 9392",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "53 Brockenhurst Gardens",
+      "addressLocality": "London",
+      "postalCode": "NW7 2JY",
+      "addressCountry": "GB"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 51.6152,
+      "longitude": -0.2523
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+        "opens": "09:00",
+        "closes": "17:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Friday", "Saturday"],
+        "opens": "09:00",
+        "closes": "15:00"
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "391"
+    }
+  };
+
+  const breadcrumbData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://dental-clinic-1-minimalist.pages.dev/"
+    }]
+  };
   const staggerContainer = {
     hidden: { opacity: 0 },
     show: {
@@ -35,6 +87,8 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen selection:bg-primary/20">
+      <JsonLd data={structuredData} />
+      <JsonLd data={breadcrumbData} />
       
       {/* 1. HERO - The Promise & Primary CTA */}
       <section className="relative h-[90vh] lg:h-[95vh] flex items-center overflow-hidden bg-surface">
@@ -46,11 +100,12 @@ export default function Home() {
             className="relative w-full h-full"
           >
             <Image
-              src="https://cdn.hlorenzoz.com/images/dental_clinic/hero-sanctuary.webp"
+              src="https://cdn.hlorenzoz.com/dental_clinic_1_minimalist/hero_sanctuary.webp"
               alt="Ecladent Sanctuary Atmosphere"
               fill
               className="object-cover opacity-60 lg:opacity-100 lg:translate-x-1/4"
               priority
+              sizes="100vw"
             />
             {/* Editorial Gradient Overlay */}
             <div className="absolute inset-0 bg-gradient-to-r from-surface via-surface/80 to-transparent lg:from-surface lg:via-surface/40" />
@@ -262,13 +317,23 @@ export default function Home() {
               <div className="relative z-10">
                 <span className="bg-primary/5 text-primary px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider mb-8 inline-block">Bespoke Cosmetic</span>
                 <h3 className="text-4xl md:text-6xl font-serif text-foreground mb-6">Invisalign & Smile Makeovers</h3>
-                <p className="text-[#3F4948] text-xl max-w-md font-light leading-relaxed">
+                <p className="text-[#3F4948] text-xl max-w-md font-light leading-relaxed mb-8">
                   Utilizing state-of-the-art iteration technology to design your perfect smile 
                   digitally before we start treatment.
                 </p>
+                <Link href="/services/cosmetic" className="text-primary font-bold flex items-center gap-2 text-sm uppercase tracking-widest">
+                  Learn More
+                  <ChevronRight className="w-4 h-4" />
+                </Link>
               </div>
               <div className="absolute right-0 bottom-0 w-1/2 h-2/3 grayscale opacity-20 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 pointer-events-none">
-                <Image src="https://cdn.hlorenzoz.com/images/dental_clinic/specialist.webp" alt="Service Detail" fill className="object-cover object-top" />
+                <Image 
+                  src="https://cdn.hlorenzoz.com/dental_clinic_1_minimalist/specialist_sam.webp" 
+                  alt="Service Detail" 
+                  fill 
+                  className="object-cover object-top" 
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
               </div>
             </motion.div>
 
@@ -339,10 +404,11 @@ export default function Home() {
               className="relative aspect-[4/5] rounded-[3rem] overflow-hidden z-20 shadow-2xl"
             >
               <Image
-                src="https://cdn.hlorenzoz.com/images/dental_clinic/specialist.webp"
+                src="https://cdn.hlorenzoz.com/dental_clinic_1_minimalist/specialist_daniel.webp"
                 alt="Aura Sanctuary Atmosphere"
                 fill
                 className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 40vw"
               />
             </motion.div>
             <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
@@ -472,19 +538,26 @@ export default function Home() {
               </div>
             </motion.div>
 
-            <motion.div 
-               initial={{ opacity: 0, x: 20 }}
-               whileInView={{ opacity: 1, x: 0 }}
-               viewport={{ once: true }}
-               className="lg:col-span-4 rounded-3xl overflow-hidden min-h-[400px] relative bg-primary/5 border border-black/5 shadow-sm"
-            >
-              <div className="absolute inset-0 bg-primary/10 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <p className="text-primary font-serif italic text-2xl mb-4 underline decoration-[#6a3516]/30 px-4">Mill Hill Sanctuary</p>
-                  <p className="text-[10px] text-[#6F7979] uppercase tracking-widest font-bold px-4">Located in the heart of NW7 London</p>
-                </div>
-              </div>
-            </motion.div>
+             <motion.div 
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="lg:col-span-4 rounded-3xl overflow-hidden min-h-[400px] relative bg-primary/5 border border-black/5 shadow-sm group"
+             >
+               <Image 
+                 src="https://cdn.hlorenzoz.com/dental_clinic_1_minimalist/clinic_interior.webp"
+                 alt="Clinic Interior Sanctuary"
+                 fill
+                 className="object-cover group-hover:scale-110 transition-transform duration-[2s] opacity-40 group-hover:opacity-60"
+                 sizes="(max-width: 1024px) 100vw, 33vw"
+               />
+               <div className="absolute inset-0 flex items-center justify-center p-8 pointer-events-none">
+                 <div className="text-center rounded-2xl p-6 bg-surface-lowest/60 backdrop-blur-md border border-white/20">
+                   <p className="text-primary font-serif italic text-2xl mb-4 underline decoration-[#6a3516]/30 px-4">Mill Hill Sanctuary</p>
+                   <p className="text-[10px] text-[#6F7979] uppercase tracking-widest font-bold px-4">Located in the heart of NW7 London</p>
+                 </div>
+               </div>
+             </motion.div>
 
           </div>
         </div>
@@ -512,16 +585,18 @@ export default function Home() {
           <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="flex flex-col gap-3 group">
-                <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#6F7979] ml-1">Full Name</label>
+                <label htmlFor="hp-full-name" className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#6F7979] ml-1">Full Name</label>
                 <input 
+                  id="hp-full-name"
                   type="text" 
                   placeholder="E.g. Alexander Vance"
                   className="bg-surface-low border-none rounded-2xl p-5 focus:ring-1 focus:ring-primary focus:bg-white transition-all outline-none text-foreground placeholder-[#bec9c8]"
                 />
               </div>
               <div className="flex flex-col gap-3 group">
-                <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#6F7979] ml-1">Phone Number</label>
+                <label htmlFor="hp-phone-number" className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#6F7979] ml-1">Phone Number</label>
                 <input 
+                  id="hp-phone-number"
                   type="tel" 
                   placeholder="+44 20 8959 9392"
                   className="bg-surface-low border-none rounded-2xl p-5 focus:ring-1 focus:ring-primary focus:bg-white transition-all outline-none text-foreground placeholder-[#bec9c8]"

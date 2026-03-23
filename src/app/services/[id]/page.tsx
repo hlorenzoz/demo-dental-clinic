@@ -2,55 +2,61 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 
-export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
-  const service = services[params.id as keyof typeof services];
+type Props = {
+  params: Promise<{ id: string }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { id } = await params;
+  const service = services[id as keyof typeof services];
   if (!service) return { title: 'Service Not Found' };
   return {
-    title: `${service.title} | Aura Dental Collective`,
+    title: `${service.title} | Ecladent Sanctuary`,
     description: service.description,
   };
 }
 
 const services = {
-  'dental-implants': {
-    title: 'Precision Implants',
+  'restorative': {
+    title: 'Precision Care',
     headline: 'Structural Mastery. Permanent Integration.',
     category: 'Restorative Excellence',
-    description: 'Our implantology protocols represent a masterclass in biomechanical engineering. Using Swiss-grade foundations and 3D bone mapping, we restore structural integrity with absolute surgical precision.',
+    description: 'Our restorative protocols represent a masterclass in biomechanical engineering. Using Swiss-grade foundations and 3D bone mapping, we restore structural integrity with absolute surgical precision.',
     benefits: ['Swiss-Grade foundations', 'Digital Bone Mapping', 'Lifetime structural stability'],
   },
-  'invisalign': {
-    title: 'Invisalign® Elite',
+  'cosmetic': {
+    title: 'Smile Design',
     headline: 'Invisible Alignment. Dynamic Precision.',
     category: 'Orthodontic Artistry',
-    description: 'Transcend the limitations of traditional ceramics. Our Invisalign Elite protocols utilize AI-driven path tracing to orchestrate tooth movement with millimeter-level accuracy.',
+    description: 'Transcend the limitations of traditional ceramics. Our cosmetic protocols utilize AI-driven path tracing to orchestrate tooth movement with millimeter-level accuracy.',
     benefits: ['Itero® 5D Intelligence', 'SmartTrack® Technology', 'Discreet, removable comfort'],
   },
-  'cosmetic-dentistry': {
-    title: 'Cosmetic Artistry',
-    headline: 'The Masterclass in Smile Radiance.',
-    category: 'Aesthetic Design',
-    description: 'Bespoke veneers and whitening systems designed from a foundation of facial architecture. We focus on light-reflective ceramics that mirror natural tooth translucency.',
-    benefits: ['Bespoke ceramic layering', 'Natural light refraction', 'Facial analysis mapping'],
+  'prevention': {
+    title: 'Hygiene Hub',
+    headline: 'Sensory Comfort. Biofilm Removal.',
+    category: 'Preventative Care',
+    description: 'Bespoke hygiene systems utilizing Airflow® technology for a non-invasive, pain-free experience. We focus on gingival health as the foundation of aesthetics.',
+    benefits: ['Airflow® Biofilm removal', 'Guided Biofilm Therapy', 'Stain removal without abrasion'],
   },
-  'general-dentistry': {
-    title: 'General Health',
-    category: 'Clinical Foundation',
-    headline: 'The Foundation of Systemic Wellness.',
-    description: 'Preventive care redefined through cutting-edge diagnostics. Our clinical hub focuses on the intersection of oral health and biological longevity.',
-    benefits: ['Laser Diagnostic Support', 'Airflow® Biofilm removal', 'Comprehensive vitality review'],
-  },
-  'emergency-care': {
+  'emergency': {
     title: 'Urgent Response',
     category: 'Immediate Care',
     headline: 'Immediate Triage. Clinical Priority.',
     description: 'On-demand clinical support for acute restorative needs. Our emergency protocol ensures immediate pain management and structural stabilization.',
     benefits: ['Rapid-response triage', 'Pain Neutralization', 'Immediate Stabilization'],
   },
+  'aesthetics': {
+    title: 'Facial Aesthetics',
+    category: 'Medical Artistry',
+    headline: 'Medical Precision. Natural Radiance.',
+    description: 'Expertly delivered anti-wrinkle and filler treatments focusing on facial symmetry and architectural balance. Administered with clinical mastery.',
+    benefits: ['Anti-wrinkle precision', 'Dermal architecture', 'Subtle, natural motion'],
+  },
 };
 
-export default function ServicePage({ params }: { params: { id: string } }) {
-  const service = services[params.id as keyof typeof services];
+export default async function ServicePage({ params }: Props) {
+  const { id } = await params;
+  const service = services[id as keyof typeof services];
   if (!service) notFound();
 
   return (

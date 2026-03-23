@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 import { useState } from 'react';
 import Link from 'next/link';
+import JsonLd from '@/components/ui/JsonLd';
 
 const faqs = [
   {
@@ -42,8 +43,42 @@ const faqs = [
 export default function FAQPage() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
+  const faqData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
+      }
+    }))
+  };
+
+  const breadcrumbData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://dental-clinic-1-minimalist.pages.dev/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "FAQ",
+        "item": "https://dental-clinic-1-minimalist.pages.dev/faq"
+      }
+    ]
+  };
+
   return (
     <div className="flex flex-col min-h-screen bg-surface pb-40">
+      <JsonLd data={faqData} />
+      <JsonLd data={breadcrumbData} />
       
       {/* 1. HERO - Curated Clarity */}
       <section className="pt-32 pb-24 lg:pt-48 lg:pb-32 px-6">
@@ -54,115 +89,129 @@ export default function FAQPage() {
             transition={{ duration: 0.8 }}
             className="flex items-center gap-3 mb-10"
           >
-            <span className="text-primary font-bold uppercase tracking-[0.4em] text-[10px] md:text-[11px]">
-               Patient Knowledge
-            </span>
+            <div className="w-12 h-12 rounded-2xl bg-primary/5 flex items-center justify-center border border-primary/10">
+               <HelpCircle className="w-6 h-6 text-primary" />
+            </div>
+            <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-primary">Patient Sanctuary Support</span>
           </motion.div>
-          
-          <div className="max-w-4xl text-center mx-auto">
-            <motion.h1 
-              initial={{ y: 50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.2, duration: 1.2 }}
-              className="text-foreground text-5xl md:text-8xl font-serif leading-[1.05] mb-12 tracking-tight"
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-end">
+            <div>
+              <motion.h1 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="text-6xl md:text-7xl lg:text-8xl font-serif text-foreground leading-[1.1] italic mb-8"
+              >
+                Ecladent <br />Curated Clarity
+              </motion.h1>
+              <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="text-xl md:text-2xl font-light text-[#6F7979] max-w-xl leading-relaxed"
+              >
+                Everything you need to know about starting your clinical 
+                journey within our Mill Hill sanctuary.
+              </motion.p>
+            </div>
+            
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1 }}
+              className="hidden lg:block bg-surface-lowest p-12 rounded-[3.5rem] border border-primary/5 shadow-soft relative overflow-hidden group"
             >
-              Curated <br />
-              <span className="italic font-normal text-primary">Clarity.</span>
-            </motion.h1>
-            <motion.p
-               initial={{ opacity: 0, y: 20 }}
-               animate={{ opacity: 1, y: 0 }}
-               transition={{ delay: 0.5, duration: 1 }}
-               className="text-xl md:text-2xl text-[#3F4948] font-light leading-relaxed max-w-2xl mx-auto"
-            >
-              Transparency is core to our clinical heritage. Below we address the most common 
-              touchpoints of the Ecladent Sanctuary journey.
-            </motion.p>
+              <div className="relative z-10">
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-4">Direct Stabilization</p>
+                <p className="text-2xl font-serif text-foreground mb-8">Need immediate relief?</p>
+                <Link href="/contact" className="flex items-center gap-4 text-primary font-bold uppercase tracking-widest text-[11px] group">
+                   Book Emergency Relief
+                   <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white scale-90 group-hover:scale-110 transition-transform">
+                      <ArrowRight className="w-4 h-4" />
+                   </div>
+                </Link>
+              </div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary group-hover:scale-[10] transition-transform duration-1000 origin-top-right rounded-full opacity-0 group-hover:opacity-100" />
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* 2. FAQ INTERFACE - The Sanctuary Accordion */}
-      <section className="px-6 flex-grow">
+      {/* 2. FAQ SECTOR - Sensory Layout */}
+      <section className="px-6">
         <div className="max-w-4xl mx-auto">
-           <div className="space-y-6">
-              {faqs.map((faq, i) => {
-                const isOpen = openIndex === i;
-                return (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.1 }}
-                    className={`bg-surface-lowest rounded-[2.5rem] overflow-hidden transition-all duration-700 ${
-                      isOpen ? 'shadow-xl' : 'shadow-sm hover:shadow-md'
-                    }`}
-                  >
-                    <button 
-                       onClick={() => setOpenIndex(isOpen ? null : i)}
-                       className="w-full p-10 md:p-12 text-left flex items-center justify-between gap-8 focus:outline-none group"
+          <div className="space-y-6">
+            {faqs.map((faq, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="group"
+              >
+                <button
+                  onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                  className={`w-full text-left p-10 md:p-12 rounded-[2.5rem] border transition-all duration-500 flex justify-between items-start gap-8 ${
+                    openIndex === index 
+                      ? 'bg-surface-lowest border-primary/10 shadow-soft' 
+                      : 'bg-surface-lowest/50 border-black/5 hover:border-primary/10'
+                  }`}
+                >
+                  <div className="flex-1">
+                    <h3 className={`text-xl md:text-2xl font-serif mb-6 transition-colors ${openIndex === index ? 'text-primary' : 'text-foreground'}`}>
+                      {faq.q}
+                    </h3>
+                    <motion.div
+                      initial={false}
+                      animate={{ 
+                        height: openIndex === index ? 'auto' : 0,
+                        opacity: openIndex === index ? 1 : 0
+                      }}
+                      className="overflow-hidden"
                     >
-                       <div className="flex items-center gap-6">
-                          <div className={`w-12 h-12 rounded-2xl flex items-center justify-center transition-colors ${
-                            isOpen ? 'bg-primary text-white' : 'bg-primary/5 text-primary group-hover:bg-primary/10'
-                          }`}>
-                             <HelpCircle className="w-5 h-5" />
-                          </div>
-                          <h3 className="text-xl md:text-2xl font-serif italic text-foreground leading-tight tracking-tight">
-                            {faq.q}
-                          </h3>
-                       </div>
-                       <div className={`shrink-0 transition-transform duration-500 ${isOpen ? 'rotate-180' : ''}`}>
-                          {isOpen ? <Minus className="w-6 h-6 text-primary" /> : <Plus className="w-6 h-6 text-primary" />}
-                       </div>
-                    </button>
-                    
-                    <motion.div 
-                       initial={false}
-                       animate={{ 
-                         height: isOpen ? 'auto' : 0,
-                         opacity: isOpen ? 1 : 0
-                       }}
-                       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                       className="overflow-hidden"
-                    >
-                       <div className="px-10 md:px-12 pb-12 md:pb-16 pt-0 ml-16 md:ml-20 max-w-2xl border-l border-primary/10">
-                          <p className="text-lg text-[#3F4948] font-light leading-relaxed opacity-90">
-                            {faq.a}
-                          </p>
-                          <div className="mt-8 flex items-center gap-4 text-primary font-bold text-xs uppercase tracking-widest cursor-pointer group">
-                             Learn More <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                          </div>
-                       </div>
+                      <p className="text-lg font-light text-[#6F7979] leading-relaxed pb-4">
+                        {faq.a}
+                      </p>
                     </motion.div>
-                  </motion.div>
-                );
-              })}
-           </div>
+                  </div>
+                  <div className={`w-12 h-12 rounded-full flex items-center justify-center shrink-0 border transition-all duration-500 ${
+                    openIndex === index 
+                      ? 'bg-primary border-primary text-white rotate-180' 
+                      : 'bg-white border-black/5 text-[#6F7979]'
+                  }`}>
+                    {openIndex === index ? <Minus className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
+                  </div>
+                </button>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* 3. DIAGNOSTIC CTA */}
+      {/* 3. ASSURANCE SECTOR */}
       <section className="pt-40 px-6">
-         <div className="max-w-5xl mx-auto relative group">
-            <div className="absolute inset-0 bg-primary/5 rounded-[4rem] group-hover:scale-105 transition-transform duration-700" />
-            <div className="relative p-16 md:p-24 text-center">
-               <div className="flex justify-center mb-10">
-                  <div className="bg-primary p-5 rounded-3xl text-white shadow-xl animate-pulse">
-                    <Activity className="w-8 h-8" />
+         <div className="max-w-7xl mx-auto">
+            <div className="bg-primary p-20 lg:p-32 rounded-[5rem] relative overflow-hidden">
+               <div className="relative z-10 flex flex-col items-center text-center max-w-3xl mx-auto">
+                  <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-3xl flex items-center justify-center mb-10 border border-white/20">
+                     <Activity className="w-10 h-10 text-white" />
                   </div>
+                  <h2 className="text-5xl md:text-6xl lg:text-7xl font-serif text-white italic mb-10">Still have a <br />clinical inquiry?</h2>
+                  <p className="text-xl text-white/70 font-light mb-12 leading-relaxed">
+                     Our clinical support collective is available for deeper 
+                     consultations regarding complex restorative journeys.
+                  </p>
+                  <Link href="/contact" className="px-14 py-6 bg-white text-primary rounded-full font-bold text-xl hover:translate-y-[-4px] transition-all shadow-2xl flex items-center gap-4">
+                     Contact Clinician
+                     <ChevronRight className="w-6 h-6" />
+                  </Link>
                </div>
-               <h2 className="text-4xl md:text-6xl font-serif text-foreground mb-10 tracking-tight leading-tight italic">
-                  Specific <span className="text-primary not-italic">Concerns?</span>
-               </h2>
-               <p className="text-xl text-[#3F4948] font-light leading-relaxed mb-16 mx-auto max-w-lg">
-                  Every patient profile is unique. Start your tailored sanctuary journey with a secure assessment.
-               </p>
-               <Link href="/contact" className="inline-flex items-center gap-6 py-6 px-16 bg-primary text-white rounded-full font-bold text-xl shadow-xl hover:translate-y-[-4px] transition-all">
-                  Request Secure Assessment
-                  <ChevronRight className="w-6 h-6" />
-               </Link>
+               
+               {/* Abstract background graphics */}
+               <div className="absolute top-[-10%] right-[-10%] w-[40%] h-[60%] bg-[#a2f0ef] opacity-20 blur-[120px] rounded-full" />
+               <div className="absolute bottom-[-10%] left-[-10%] w-[30%] h-[50%] bg-[#ffb690] opacity-10 blur-[100px] rounded-full" />
             </div>
          </div>
       </section>

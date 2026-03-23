@@ -47,3 +47,6 @@ next-env.d.ts
 .npm_tmp/
 .9ebf3fdd5f4ffdf4-00000000.hm
 cf_token.txt
+.wrangler/
+playwright-report/
+test-results/

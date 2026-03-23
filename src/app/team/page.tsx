@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { 
   Award, 
   GraduationCap, 
@@ -11,6 +12,7 @@ import {
   ChevronRight
 } from 'lucide-react';
 import Link from 'next/link';
+import JsonLd from '@/components/ui/JsonLd';
 
 const specialists = [
   {
@@ -59,6 +61,41 @@ const hygieneTeam = [
 ];
 
 export default function TeamPage() {
+  const breadcrumbData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://dental-clinic-1-minimalist.pages.dev/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Team",
+        "item": "https://dental-clinic-1-minimalist.pages.dev/team"
+      }
+    ]
+  };
+
+  const teamData = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Ecladent Clinical Collective",
+    "description": "Meet our team of elite dental specialists at Ecladent Sanctuary.",
+    "itemListElement": specialists.map((member, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "Person",
+        "name": member.name,
+        "jobTitle": member.role,
+        "description": member.background
+      }
+    }))
+  };
   const fadeInUp: any = {
     hidden: { y: 20, opacity: 0 },
     show: { y: 0, opacity: 1, transition: { duration: 0.8, ease: "easeOut" } }
@@ -66,6 +103,8 @@ export default function TeamPage() {
 
   return (
     <div className="flex flex-col min-h-screen bg-surface pb-32">
+      <JsonLd data={breadcrumbData} />
+      <JsonLd data={teamData} />
       
       {/* 1. HERO - The Human Element */}
       <section className="pt-32 pb-24 lg:pt-48 lg:pb-32 px-6">
@@ -144,8 +183,19 @@ export default function TeamPage() {
                    </div>
 
                    <div className="hidden lg:flex justify-end pr-8">
-                      <div className="w-64 h-80 bg-surface-low rounded-[2rem] flex items-center justify-center opacity-40 group-hover:opacity-100 transition-opacity">
-                        <Award className="w-16 h-16 text-primary" />
+                      <div className="w-64 h-80 bg-surface-low rounded-[2rem] overflow-hidden group-hover:scale-[1.02] transition-transform shadow-lg relative">
+                        <Image 
+                          src={`https://cdn.hlorenzoz.com/dental_clinic_1_minimalist/${
+                            doc.name.includes('Sam') ? 'specialist_sam.webp' : 
+                            doc.name.includes('Daniel') ? 'specialist_daniel.webp' : 
+                            doc.name.includes('Saul') ? 'specialist_saul.webp' : 
+                            'specialist_sonal.webp'
+                          }`}
+                          alt={doc.name}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 1024px) 100vw, 50vw"
+                        />
                       </div>
                    </div>
                 </div>

@@ -11,6 +11,8 @@ import {
   ShieldAlert,
   ArrowUpRight
 } from 'lucide-react';
+import Image from 'next/image';
+import JsonLd from '@/components/ui/JsonLd';
 
 const workingHours = [
   { day: 'Monday', hours: '08:30 – 17:30' },
@@ -23,6 +25,46 @@ const workingHours = [
 ];
 
 export default function ContactPage() {
+  const breadcrumbData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://dental-clinic-1-minimalist.pages.dev/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Contact",
+        "item": "https://dental-clinic-1-minimalist.pages.dev/contact"
+      }
+    ]
+  };
+
+  const contactData = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Ecladent Sanctuary",
+    "image": "https://cdn.hlorenzoz.com/dental_clinic_1_minimalist/clinic_interior.webp",
+    "telephone": "+44 20 8959 9392",
+    "email": "hello@ecladent.co.uk",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "53 Brockenhurst Gardens",
+      "addressLocality": "London",
+      "postalCode": "NW7 2JY",
+      "addressCountry": "GB"
+    },
+    "openingHoursSpecification": workingHours.map(wh => ({
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": wh.day,
+      "opens": wh.hours.split(' – ')[0],
+      "closes": wh.hours.split(' – ')[1] || "00:00"
+    }))
+  };
   const fadeInUp: any = {
     hidden: { y: 20, opacity: 0 },
     show: { y: 0, opacity: 1, transition: { duration: 0.8, ease: "easeOut" } }
@@ -30,6 +72,8 @@ export default function ContactPage() {
 
   return (
     <div className="flex flex-col min-h-screen bg-surface">
+      <JsonLd data={breadcrumbData} />
+      <JsonLd data={contactData} />
       
       {/* 1. HERO - Sanctuary Journey */}
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 px-6 overflow-hidden">
@@ -188,16 +232,18 @@ export default function ContactPage() {
                 <form className="space-y-12">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                     <div className="space-y-4">
-                      <label className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#6F7979]">Full Name</label>
+                      <label htmlFor="full-name" className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#6F7979]">Full Name</label>
                       <input 
+                        id="full-name"
                         type="text" 
                         placeholder="Clinical Name"
                         className="w-full bg-surface-low border-none rounded-2xl px-8 py-5 focus:ring-2 focus:ring-primary/10 transition-all font-light outline-none" 
                       />
                     </div>
                     <div className="space-y-4">
-                      <label className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#6F7979]">Phone Secure</label>
+                      <label htmlFor="phone-secure" className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#6F7979]">Phone Secure</label>
                       <input 
+                        id="phone-secure"
                         type="tel" 
                         placeholder="Primary Contact"
                         className="w-full bg-surface-low border-none rounded-2xl px-8 py-5 focus:ring-2 focus:ring-primary/10 transition-all font-light outline-none" 
@@ -218,8 +264,9 @@ export default function ContactPage() {
                   </div>
 
                   <div className="space-y-4">
-                    <label className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#6F7979]">Clinical Notes</label>
+                    <label htmlFor="clinical-notes" className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#6F7979]">Clinical Notes</label>
                     <textarea 
+                      id="clinical-notes"
                       rows={5} 
                       placeholder="Please describe your restorative goals or urgent needs..."
                       className="w-full bg-surface-low border-none rounded-3xl px-8 py-6 focus:ring-2 focus:ring-primary/10 transition-all font-light outline-none resize-none" 
@@ -281,20 +328,28 @@ export default function ContactPage() {
          <div className="max-w-7xl mx-auto text-center">
             <h2 className="text-4xl md:text-7xl font-serif text-foreground mb-16 tracking-tight">The <span className="italic">Environment.</span></h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-               {[1, 2, 3].map((i) => (
+               {[
+                 { id: 1, src: 'clinic_interior.webp' },
+                 { id: 2, src: 'hero_sanctuary.webp' },
+                 { id: 3, src: 'hygiene_airflow.webp' }
+               ].map((img, i) => (
                  <motion.div 
-                    key={i}
+                    key={img.id}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.2 }}
                     className="aspect-[4/5] bg-surface-low rounded-[3rem] overflow-hidden group relative"
                  >
-                    <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-12 text-white">
+                    <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-12 text-white z-20">
                        <p className="text-xl font-serif italic text-center">Engineered for absolute clinical calm.</p>
                     </div>
-                    {/* Placeholder for local gallery images */}
-                    <div className="w-full h-full bg-primary/5" />
+                    <Image 
+                      src={`https://cdn.hlorenzoz.com/dental_clinic_1_minimalist/${img.src}`}
+                      alt="Clinic Environment"
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-1000"
+                    />
                  </motion.div>
                ))}
             </div>

@@ -12,8 +12,27 @@ import {
   ArrowRight,
   UserCheck
 } from 'lucide-react';
+import JsonLd from '@/components/ui/JsonLd';
 
 export default function AboutPage() {
+  const breadcrumbData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://dental-clinic-1-minimalist.pages.dev/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "About",
+        "item": "https://dental-clinic-1-minimalist.pages.dev/about"
+      }
+    ]
+  };
   const fadeInUp: any = {
     hidden: { y: 30, opacity: 0 },
     show: { y: 0, opacity: 1, transition: { duration: 1, ease: "easeOut" } }
@@ -21,6 +40,7 @@ export default function AboutPage() {
 
   return (
     <div className="flex flex-col min-h-screen bg-surface">
+      <JsonLd data={breadcrumbData} />
       
       {/* 1. HERO - Editorial Manifesto */}
       <section className="relative pt-32 pb-40 lg:pt-48 lg:pb-60 px-6 overflow-hidden">
@@ -62,7 +82,13 @@ export default function AboutPage() {
                 <div className="flex -space-x-3">
                    {[1,2,3].map(i => (
                      <div key={i} className="w-12 h-12 rounded-full border-2 border-surface bg-surface-low overflow-hidden relative">
-                        <Image src={`https://cdn.hlorenzoz.com/images/dental_clinic/specialist.webp`} fill alt="Team member" className="object-cover" />
+                        <Image 
+                           src={`https://cdn.hlorenzoz.com/dental_clinic_1_minimalist/staff_avatar_${i}.webp`} 
+                           fill 
+                           alt="Team member" 
+                           className="object-cover" 
+                           sizes="48px"
+                         />
                      </div>
                    ))}
                 </div>
@@ -80,10 +106,11 @@ export default function AboutPage() {
                className="lg:col-span-6 relative aspect-[16/10] rounded-[2.5rem] overflow-hidden shadow-2xl"
             >
               <Image 
-                src="https://cdn.hlorenzoz.com/images/dental_clinic/hero-sanctuary.webp" 
+                src="https://cdn.hlorenzoz.com/dental_clinic_1_minimalist/hero_sanctuary.webp" 
                 alt="Sanctuary Atmosphere" 
                 fill 
                 className="object-cover" 
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </motion.div>
           </div>
@@ -139,10 +166,11 @@ export default function AboutPage() {
               className="relative aspect-[3/4] rounded-[4rem] overflow-hidden shadow-2xl"
             >
                <Image 
-                src="https://cdn.hlorenzoz.com/images/dental_clinic/specialist.webp" 
+                src="https://cdn.hlorenzoz.com/dental_clinic_1_minimalist/clinic_interior.webp" 
                 alt="Ecladent Specialist at work" 
                 fill 
                 className="object-cover" 
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent pointer-events-none" />
               <div className="absolute bottom-12 left-12 right-12 p-10 bg-surface-lowest/80 backdrop-blur-xl rounded-3xl border border-white/20">
@@ -241,10 +269,15 @@ export default function AboutPage() {
                  >
                     <div className="aspect-[3/4] rounded-[2.5rem] bg-surface-lowest overflow-hidden mb-8 shadow-sm">
                        <Image 
-                        src="https://cdn.hlorenzoz.com/images/dental_clinic/specialist.webp" 
+                        src={`https://cdn.hlorenzoz.com/dental_clinic_1_minimalist/${
+                          member.name.includes('Lead') ? 'specialist_sam.webp' : 
+                          member.name.includes('Corinne') ? 'hygiene_airflow.webp' : 
+                          'specialist_eileen.webp'
+                        }`}
                         alt={member.name} 
                         fill 
                         className="object-cover grayscale hover:grayscale-0 transition-all duration-700" 
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                        />
                        <div className="absolute top-8 left-8 text-white z-20">
                           <span className="text-xs font-bold uppercase tracking-[0.4em] opacity-60">specialist {member.id}</span>

@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { 
   Zap, 
@@ -13,6 +14,63 @@ import {
   Smile,
   Activity
 } from 'lucide-react';
+
+import JsonLd from '@/components/ui/JsonLd';
+
+const breadcrumbData = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://dental-clinic-1-minimalist.pages.dev/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Services",
+      "item": "https://dental-clinic-1-minimalist.pages.dev/services"
+    }
+  ]
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Dentistry",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Ecladent Sanctuary"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "London"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Dental Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Emergency Relief",
+          "description": "Acute pain management and stabilization"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Smile Design",
+          "description": "Transformative cosmetic procedures"
+        }
+      }
+    ]
+  }
+};
 
 const serviceCategories = [
   {
@@ -69,7 +127,8 @@ export default function ServicesPage() {
 
   return (
     <div className="flex flex-col min-h-screen bg-surface">
-      
+      <JsonLd data={breadcrumbData} />
+      <JsonLd data={serviceSchema} />
       {/* 1. HERO - The Art of Restoration */}
       <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-32 px-6">
         <div className="max-w-7xl mx-auto">
@@ -171,15 +230,23 @@ export default function ServicesPage() {
 
                    <div className="ml-auto flex flex-col items-center lg:items-end justify-center w-full lg:w-fit py-12 lg:py-0 border-t lg:border-t-0 lg:border-l border-current/10 px-0 lg:px-16">
                        <span className={`text-4xl md:text-5xl font-serif italic mb-10 ${cat.accent}`}>{cat.offer}</span>
-                       <Link 
-                        href={`/contact?service=${cat.id}`}
-                        className={`flex items-center gap-3 py-5 px-10 rounded-full font-bold text-lg shadow-xl hover:translate-x-1 transition-all ${
-                          cat.id === 'emergency' ? 'bg-white text-primary' : 'bg-primary text-white'
-                        }`}
-                       >
-                          Agendar Consulta
-                          <ChevronRight className="w-5 h-5" />
-                       </Link>
+                       <div className="flex flex-col sm:flex-row gap-4">
+                        <Link 
+                          href={`/services/${cat.id}`}
+                          className={`flex items-center gap-3 py-4 px-8 rounded-full font-bold text-base border border-current/20 hover:bg-current/5 transition-all`}
+                        >
+                          Explore Treatment
+                        </Link>
+                        <Link 
+                          href={`/contact?service=${cat.id}`}
+                          className={`flex items-center gap-3 py-4 px-8 rounded-full font-bold text-base shadow-xl hover:translate-x-1 transition-all ${
+                            cat.id === 'emergency' ? 'bg-white text-primary' : 'bg-primary text-white'
+                          }`}
+                        >
+                            Agendar Consulta
+                            <ChevronRight className="w-5 h-5" />
+                        </Link>
+                       </div>
                    </div>
                 </div>
                 
@@ -202,9 +269,14 @@ export default function ServicesPage() {
                transition={{ duration: 1.2 }}
                className="relative aspect-square rounded-[4rem] overflow-hidden shadow-2xl"
             >
-               <div className="absolute inset-0 bg-primary/40 grayscale mix-blend-multiply transition-all duration-700 hover:grayscale-0 hover:mix-blend-normal cursor-pointer">
-                  {/* Image Placeholder */}
-                  <div className="w-full h-full bg-surface-low" />
+               <div className="absolute inset-0 grayscale hover:grayscale-0 transition-all duration-1000 cursor-pointer overflow-hidden">
+                  <Image 
+                    src="https://cdn.hlorenzoz.com/dental_clinic_1_minimalist/hygiene_airflow.webp"
+                    alt="Facial Aesthetics"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
                </div>
                <div className="absolute inset-0 p-12 flex flex-col justify-end text-white relative h-full">
                   <div className="relative z-10">

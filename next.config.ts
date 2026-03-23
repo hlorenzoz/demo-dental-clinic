@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'cdn.hlorenzoz.com',
         port: '',
-        pathname: '/images/**',
+        pathname: '/**',
       },
     ],
   },
