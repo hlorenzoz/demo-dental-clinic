@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { 
   Phone, 
   MapPin, 
@@ -22,9 +23,9 @@ const workingHours = [
 ];
 
 export default function ContactPage() {
-  const fadeInUp = {
+  const fadeInUp: any = {
     hidden: { y: 20, opacity: 0 },
-    show: { y: 0, opacity: 1, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } }
+    show: { y: 0, opacity: 1, transition: { duration: 0.8, ease: "easeOut" } }
   };
 
   return (
@@ -80,7 +81,10 @@ export default function ContactPage() {
               
               {/* NAP Details */}
               <motion.div 
-                {...fadeInUp}
+                variants={fadeInUp}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
                 className="space-y-12"
               >
                 <div>
@@ -117,8 +121,9 @@ export default function ContactPage() {
 
               {/* Working Hours Container */}
               <motion.div 
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                variants={fadeInUp}
+                initial="hidden"
+                whileInView="show"
                 viewport={{ once: true }}
                 className="bg-surface-low rounded-[3rem] p-10 md:p-12 border border-primary/5"
               >
