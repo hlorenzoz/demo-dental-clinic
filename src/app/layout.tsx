@@ -15,6 +15,28 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   title: "Ecladent | The Clinical Sanctuary Mill Hill",
   description: "Advanced restorative & emergency dentistry in a calm, women-owned sanctuary. LGBT-friendly and safe space.",
+  openGraph: {
+    title: "Ecladent Sanctuary | Mill Hill Dental Clinic",
+    description: "Advanced restorative & emergency dentistry in a calm, inclusive environment.",
+    url: "https://dental-clinic-1-minimalist.pages.dev/",
+    siteName: "Ecladent Sanctuary",
+    images: [
+      {
+        url: "https://cdn.hlorenzoz.com/dental_clinic_1_minimalist/hero.webp",
+        width: 1280,
+        height: 629,
+        alt: "Ecladent Sanctuary - Mill Hill Dental Clinic",
+      },
+    ],
+    locale: "en_GB",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ecladent Sanctuary | Mill Hill Dental Clinic",
+    description: "Advanced restorative & emergency dentistry in a calm, inclusive environment.",
+    images: ["https://cdn.hlorenzoz.com/dental_clinic_1_minimalist/hero.webp"],
+  },
 };
 
 import { Navigation } from "@/components/ui/Navigation";

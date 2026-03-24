@@ -23,7 +23,7 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Ecladent Sanctuary - Mill Hill Dental Clinic",
-    "image": "https://cdn.hlorenzoz.com/dental_clinic_1_minimalist/hero_sanctuary.webp",
+    "image": "https://cdn.hlorenzoz.com/dental_clinic_1_minimalist/hero.webp",
     "@id": "https://dental-clinic-1-minimalist.pages.dev/",
     "url": "https://dental-clinic-1-minimalist.pages.dev/",
     "telephone": "+44 20 8959 9392",
@@ -101,7 +101,7 @@ export default function Home() {
             className="relative w-full h-full"
           >
             <Image
-              src="https://cdn.hlorenzoz.com/dental_clinic_1_minimalist/hero_sanctuary.webp"
+              src="https://cdn.hlorenzoz.com/dental_clinic_1_minimalist/hero.webp"
               alt="Ecladent Sanctuary Atmosphere"
               fill
               className="object-cover opacity-60 lg:opacity-100 lg:translate-x-1/4"
