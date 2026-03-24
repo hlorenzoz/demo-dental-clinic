@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Background with the Primary Brand Color -->
+  <rect width="32" height="32" rx="6" fill="#004c4c"/>
+  
+  <!-- Minimalist "E" Iconography with Integrated Sanctuary Leaf/Tooth Concept -->
+  <path d="M10 8h12v3h-9v3h7v3h-7v4h10v3H10V8z" fill="#ffffff"/>
+  
+  <!-- Subtle Abstract Sanctuary/Tooth Accent -->
+  <path d="M22 8c0 3-4 3-4 0s4-3 4 0z" fill="#ffffff" opacity="0.8"/>
+  <path d="M19 24c3 0 3-4 0-4s-3 4 0 4z" fill="#ffffff" opacity="0.6"/>
+</svg>

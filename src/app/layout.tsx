@@ -37,6 +37,10 @@ export const metadata: Metadata = {
     description: "Advanced restorative & emergency dentistry in a calm, inclusive environment.",
     images: ["https://cdn.hlorenzoz.com/dental_clinic_1_minimalist/hero.webp"],
   },
+  icons: {
+    icon: "/favicon.svg",
+    apple: "/favicon.svg",
+  },
 };
 
 import { Navigation } from "@/components/ui/Navigation";
