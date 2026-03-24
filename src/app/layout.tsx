@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     siteName: "Aurora Dental Sanctuary",
     images: [
       {
-        url: "https://cdn.hlorenzoz.com/dental_clinic_1_minimalist/hero_aurora.webp",
+        url: "https://cdn.hlorenzoz.com/dental_clinic_1_minimalist/hero_aurora_v2.webp",
         width: 1280,
         height: 1280,
         alt: "Aurora Dental Sanctuary - Mill Hill Dental Clinic",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Aurora Dental Sanctuary | Mill Hill Dental Clinic",
     description: "Advanced restorative & emergency dentistry in a calm, inclusive environment.",
-    images: ["https://cdn.hlorenzoz.com/dental_clinic_1_minimalist/hero_aurora.webp"],
+    images: ["https://cdn.hlorenzoz.com/dental_clinic_1_minimalist/hero_aurora_v2.webp"],
   },
   icons: {
     icon: "/favicon.svg",
