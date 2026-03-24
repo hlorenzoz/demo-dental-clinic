@@ -6,7 +6,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-16 md:gap-24">
         <div className="md:col-span-5">
           <Link href="/" className="text-3xl font-serif text-primary font-bold mb-8 block">
-            Ecladent<span className="text-secondary/60">.</span>
+            Aurora<span className="text-secondary/60">.</span>
           </Link>
           <p className="text-[#4A5453] text-base leading-relaxed max-w-sm font-light">
             A restorative sanctuary where clinical excellence meets the art of dentistry. 
@@ -46,7 +46,7 @@ export function Footer() {
       </div>
       
       <div className="max-w-7xl mx-auto mt-32 pt-16 flex flex-col md:flex-row justify-between items-start md:items-center text-[10px] text-[#4F5958] uppercase tracking-[0.3em] font-medium border-t border-primary/10">
-        <p>© 2026 Ecladent Sanctuary. Curated with Precision.</p>
+        <p>© 2026 Aurora Sanctuary. Curated with Precision.</p>
         <div className="mt-4 md:mt-0 flex flex-col md:flex-row gap-8">
           <span>53 Brockenhurst Gardens, London NW7 2JY</span>
           <span>+44 20 8959 9392</span>

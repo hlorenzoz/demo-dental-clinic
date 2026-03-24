@@ -13,19 +13,19 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Ecladent | The Clinical Sanctuary Mill Hill",
-  description: "Advanced restorative & emergency dentistry in a calm, women-owned sanctuary. LGBT-friendly and safe space.",
+  title: "Aurora Dental | The Clinical Sanctuary Mill Hill",
+  description: "Advanced restorative & emergency dentistry in a calm, women-owned Aurora Sanctuary. LGBT-friendly and safe space.",
   openGraph: {
-    title: "Ecladent Sanctuary | Mill Hill Dental Clinic",
+    title: "Aurora Dental Sanctuary | Mill Hill Dental Clinic",
     description: "Advanced restorative & emergency dentistry in a calm, inclusive environment.",
     url: "https://dental-clinic-1-minimalist.pages.dev/",
-    siteName: "Ecladent Sanctuary",
+    siteName: "Aurora Dental Sanctuary",
     images: [
       {
-        url: "https://cdn.hlorenzoz.com/dental_clinic_1_minimalist/hero.webp",
+        url: "https://cdn.hlorenzoz.com/dental_clinic_1_minimalist/hero_aurora.webp",
         width: 1280,
-        height: 629,
-        alt: "Ecladent Sanctuary - Mill Hill Dental Clinic",
+        height: 1280,
+        alt: "Aurora Dental Sanctuary - Mill Hill Dental Clinic",
       },
     ],
     locale: "en_GB",
@@ -33,9 +33,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ecladent Sanctuary | Mill Hill Dental Clinic",
+    title: "Aurora Dental Sanctuary | Mill Hill Dental Clinic",
     description: "Advanced restorative & emergency dentistry in a calm, inclusive environment.",
-    images: ["https://cdn.hlorenzoz.com/dental_clinic_1_minimalist/hero.webp"],
+    images: ["https://cdn.hlorenzoz.com/dental_clinic_1_minimalist/hero_aurora.webp"],
   },
   icons: {
     icon: "/favicon.svg",

@@ -42,7 +42,7 @@ const serviceSchema = {
   "serviceType": "Dentistry",
   "provider": {
     "@type": "LocalBusiness",
-    "name": "Ecladent Sanctuary - Mill Hill Dental Clinic",
+    "name": "Aurora Sanctuary - Mill Hill Dental Clinic",
     "priceRange": "££-£££"
   },
   "areaServed": {
@@ -161,7 +161,7 @@ export default function ServicesPage() {
                  transition={{ delay: 0.5, duration: 1 }}
                  className="text-xl md:text-2xl text-[#3F4948] font-light leading-relaxed max-w-2xl"
               >
-                Bespoke restorative artistry and precision clinical heritage converge at Ecladent. 
+                Bespoke restorative artistry and precision clinical heritage converge at Aurora. 
                 We move beyond standard dentistry to curate long-term oral wellness.
               </motion.p>
             </div>
@@ -340,7 +340,7 @@ export default function ServicesPage() {
             <span className="italic font-normal">Transformation.</span>
           </motion.h2>
           <p className="text-2xl text-white/80 font-light leading-relaxed mb-16 max-w-2xl mx-auto">
-            Clinical excellence meets artisanal design. Secure your spot at Ecladent Sanctuary.
+            Clinical excellence meets artisanal design. Secure your spot at Aurora Sanctuary.
           </p>
           <Link href="/contact" className="inline-flex items-center gap-6 py-6 px-16 bg-white text-primary rounded-full font-bold text-2xl shadow-2xl hover:bg-surface-low transition-all group">
             Book Appointment

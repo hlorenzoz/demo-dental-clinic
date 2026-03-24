@@ -47,7 +47,7 @@ export default function ContactPage() {
   const contactData = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Ecladent Sanctuary - Mill Hill Dental Clinic",
+    "name": "Aurora Sanctuary - Mill Hill Dental Clinic",
     "image": "https://cdn.hlorenzoz.com/dental_clinic_1_minimalist/clinic_interior.webp",
     "telephone": "+44 20 8959 9392",
     "email": "hello@ecladent.co.uk",
@@ -312,7 +312,7 @@ export default function ContactPage() {
             
             <div className="w-full h-[600px] rounded-[4rem] overflow-hidden shadow-2xl border border-primary/5 relative">
                <iframe 
-                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2478.4124316086884!2d-0.24765620000000002!3d51.615625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487610bd8b4b741d%3A0xe549cd2981509618!2sEcladent%20Dental%20Sanctuary!5e0!3m2!1sen!2suk!4v1711200000000!5m2!1sen!2suk" 
+                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2478.4124316086884!2d-0.24765620000000002!3d51.615625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487610bd8b4b741d%3A0xe549cd2981509618!2sAurora%20Dental%20Sanctuary!5e0!3m2!1sen!2suk!4v1711200000000!5m2!1sen!2suk" 
                  className="w-full h-full grayscale hover:grayscale-0 transition-all duration-1000"
                  style={{ border: 0 }} 
                  allowFullScreen={true} 

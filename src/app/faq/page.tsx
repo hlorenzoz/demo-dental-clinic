@@ -16,7 +16,7 @@ import JsonLd from '@/components/ui/JsonLd';
 const faqs = [
   {
     q: 'Are you accepting new patients at Mill Hill?',
-    a: 'Yes, Ecladent Sanctuary is currently welcoming new patients into our Mill Hill collective. Every patient begins with a comprehensive 3D clinical assessment to establish a restorative baseline.'
+    a: 'Yes, Aurora Sanctuary is currently welcoming new patients into our Mill Hill collective. Every patient begins with a comprehensive 3D clinical assessment to establish a restorative baseline.'
   },
   {
     q: 'How does the £75 emergency relief work?',
@@ -27,7 +27,7 @@ const faqs = [
     a: 'We operate a late clinic on Thursdays (until 19:30) and offer exclusive Saturday sessions by prior appointment to accommodate your schedule.'
   },
   {
-    q: 'Is Ecladent LGBTQ+ and neurodivergent friendly?',
+    q: 'Is Aurora LGBTQ+ and neurodivergent friendly?',
     a: 'Absolutely. We have engineered our environment to be a "Sanctuary" for all. This includes a sensory-calm atmosphere, inclusive protocols, and a focus on clinical empathy.'
   },
   {
@@ -103,7 +103,7 @@ export default function FAQPage() {
                 transition={{ duration: 0.8 }}
                 className="text-6xl md:text-7xl lg:text-8xl font-serif text-foreground leading-[1.1] italic mb-8"
               >
-                Ecladent <br />Curated Clarity
+                Aurora <br />Curated Clarity
               </motion.h1>
               <motion.p 
                 initial={{ opacity: 0, y: 20 }}

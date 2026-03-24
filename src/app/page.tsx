@@ -22,8 +22,8 @@ export default function Home() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Ecladent Sanctuary - Mill Hill Dental Clinic",
-    "image": "https://cdn.hlorenzoz.com/dental_clinic_1_minimalist/hero.webp",
+    "name": "Aurora Dental Sanctuary - Mill Hill Clinic",
+    "image": "https://cdn.hlorenzoz.com/dental_clinic_1_minimalist/hero_aurora.webp",
     "@id": "https://dental-clinic-1-minimalist.pages.dev/",
     "url": "https://dental-clinic-1-minimalist.pages.dev/",
     "telephone": "+44 20 8959 9392",
@@ -101,8 +101,8 @@ export default function Home() {
             className="relative w-full h-full"
           >
             <Image
-              src="https://cdn.hlorenzoz.com/dental_clinic_1_minimalist/hero.webp"
-              alt="Ecladent Sanctuary Atmosphere"
+              src="https://cdn.hlorenzoz.com/dental_clinic_1_minimalist/hero_aurora.webp"
+              alt="Aurora Dental Sanctuary Atmosphere"
               fill
               className="object-cover opacity-60 lg:opacity-100 lg:translate-x-1/4"
               priority
@@ -205,7 +205,7 @@ export default function Home() {
             >
               <motion.div variants={fadeInUp} className="max-w-sm">
                 <p className="text-foreground text-lg mb-6 italic leading-relaxed">
-                  "Corinne the hygienist is exceptional. The whole team at Ecladent makes you feel 
+                  "Corinne the hygienist is exceptional. The whole team at Aurora makes you feel 
                   safe and supported from the moment you walk in."
                 </p>
                 <div className="flex items-center gap-3">
@@ -216,7 +216,7 @@ export default function Home() {
 
               <motion.div variants={fadeInUp} className="max-w-sm">
                 <p className="text-foreground text-lg mb-6 italic leading-relaxed">
-                  "Eileen at reception is a lovely soul. I was terrified of dentist visits until I found Ecladent. 
+                  "Eileen at reception is a lovely soul. I was terrified of dentist visits until I found Aurora. 
                   A true sanctuary for nervous patients."
                 </p>
                 <div className="flex items-center gap-3">
@@ -434,7 +434,7 @@ export default function Home() {
             </h2>
             <div className="space-y-8 text-xl text-[#3F4948] mb-16 leading-relaxed font-light">
               <p>
-                Ecladent represents a departure from traditional corporate dentistry. As a proudly 
+                Aurora represents a departure from traditional corporate dentistry. As a proudly 
                 women-owned boutique clinic, we prioritize the emotional well-being of our patients 
                 as much as their clinical outcomes.
               </p>
@@ -477,7 +477,7 @@ export default function Home() {
                className="lg:col-span-4"
             >
               <Link href="/" className="inline-block mb-10">
-                <span className="text-2xl font-serif font-bold text-primary tracking-tight">Ecladent</span>
+                <span className="text-2xl font-serif font-bold text-primary tracking-tight">Aurora</span>
               </Link>
               <div className="space-y-8">
                 <div className="flex gap-4">

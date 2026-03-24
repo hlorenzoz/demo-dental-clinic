@@ -17,7 +17,7 @@ export function Navigation() {
   return (
     <nav className="sticky top-0 z-50 w-full px-8 py-5 flex justify-between items-center glass border-b border-primary/5">
       <Link href="/" className="text-[22px] font-serif text-primary font-bold tracking-tight">
-        Ecladent<span className="text-secondary/60 text-lg">.</span>
+        Aurora<span className="text-secondary/60 text-lg">.</span>
       </Link>
       
       <div className="hidden md:flex gap-12 items-center">

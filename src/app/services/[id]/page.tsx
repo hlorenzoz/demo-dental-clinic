@@ -11,7 +11,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const service = services[id as keyof typeof services];
   if (!service) return { title: 'Service Not Found' };
   return {
-    title: `${service.title} | Ecladent Sanctuary`,
+    title: `${service.title} | Aurora Sanctuary`,
     description: service.description,
   };
 }

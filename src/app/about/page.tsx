@@ -143,7 +143,7 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-8 text-xl text-[#3F4948] font-light leading-relaxed">
                 <p>
-                  Ecladent Sanctuary was founded as a departure from the "industrial-scale" corporate 
+                  Aurora Sanctuary was founded as a departure from the "industrial-scale" corporate 
                   dentistry model. We believe clinical mastery is a prerequisite, but the emotional 
                   experience is what truly defines excellence.
                 </p>
@@ -168,7 +168,7 @@ export default function AboutPage() {
             >
                <Image 
                 src="https://cdn.hlorenzoz.com/dental_clinic_1_minimalist/clinic_interior.webp" 
-                alt="Ecladent Specialist at work" 
+                alt="Aurora Specialist at work" 
                 fill 
                 className="object-cover" 
                 sizes="(max-width: 1024px) 100vw, 50vw"

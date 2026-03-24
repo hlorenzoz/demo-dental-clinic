@@ -83,8 +83,8 @@ export default function TeamPage() {
   const teamData = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    "name": "Ecladent Clinical Collective",
-    "description": "Meet our team of elite dental specialists at Ecladent Sanctuary.",
+    "name": "Aurora Clinical Collective",
+    "description": "Meet our team of elite dental specialists at Aurora Sanctuary.",
     "itemListElement": specialists.map((member, index) => ({
       "@type": "ListItem",
       "position": index + 1,
