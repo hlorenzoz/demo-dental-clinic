@@ -243,8 +243,8 @@ export default function Home() {
               <div className="absolute bottom-0 left-0 w-[300px] h-[300px] rounded-full bg-white blur-[80px]" />
             </div>
 
-            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2">
-              <div className="p-12 lg:p-24 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-white/10">
+            <div className="relative z-10 grid grid-cols-1 xl:grid-cols-2">
+              <div className="p-12 xl:p-24 flex flex-col justify-center border-b xl:border-b-0 xl:border-r border-white/10">
                 <div className="flex items-center gap-2 mb-8">
                   <Zap className="w-6 h-6 text-[#ffb690]" />
                   <span className="text-white font-bold uppercase tracking-[0.3em] text-[11px]">Priority Emergency Care</span>
@@ -259,12 +259,12 @@ export default function Home() {
                 </p>
                 <Link 
                   href="/contact?type=emergency" 
-                  className="bg-white text-primary px-12 py-5 rounded-full font-bold text-lg hover:bg-surface-low transition-all text-center lg:self-start"
+                  className="bg-white text-primary px-12 py-5 rounded-full font-bold text-lg hover:bg-surface-low transition-all text-center xl:self-start"
                 >
                   Secure Emergency Slot
                 </Link>
               </div>
-              <div className="p-12 lg:p-24 bg-primary-container/30 backdrop-blur-sm">
+              <div className="p-12 xl:p-24 bg-primary-container/30 backdrop-blur-sm">
                 <div className="space-y-8">
                   <div className="flex gap-4 items-start text-white">
                     <CheckCircle2 className="w-6 h-6 text-[#a2f0ef]" />
@@ -310,11 +310,11 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[800px]">
+          <div className="grid grid-cols-1 xl:grid-cols-12 gap-6 h-auto xl:h-[800px]">
             {/* Main Service */}
             <motion.div 
               whileHover={{ y: -5 }}
-              className="md:col-span-8 bg-surface-lowest rounded-3xl p-12 flex flex-col justify-between relative overflow-hidden group shadow-sm border border-black/5"
+              className="xl:col-span-8 bg-surface-lowest rounded-3xl p-12 flex flex-col justify-between relative overflow-hidden group shadow-sm border border-black/5"
             >
               <div className="relative z-10">
                 <span className="bg-primary/5 text-primary px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider mb-8 inline-block">Bespoke Cosmetic</span>
@@ -335,6 +335,7 @@ export default function Home() {
                   fill 
                   className="object-cover object-top" 
                   sizes="(max-width: 768px) 100vw, 50vw"
+                  priority
                 />
               </div>
             </motion.div>
@@ -342,7 +343,7 @@ export default function Home() {
             {/* Smaller Service 1 */}
             <motion.div 
               whileHover={{ y: -5 }}
-              className="md:col-span-4 bg-primary text-white rounded-3xl p-10 flex flex-col justify-center border border-white/5 shadow-lg shadow-primary/10"
+              className="xl:col-span-4 bg-primary text-white rounded-3xl p-10 flex flex-col justify-center border border-white/5 shadow-lg shadow-primary/10"
             >
               <Zap className="w-12 h-12 text-[#a2f0ef] mb-8" />
               <h3 className="text-3xl font-serif mb-6 leading-tight">Emergency <br />Stabilization</h3>
@@ -361,7 +362,7 @@ export default function Home() {
             {/* Smaller Service 2 */}
             <motion.div 
               whileHover={{ y: -5 }}
-              className="md:col-span-4 bg-surface-lowest rounded-3xl p-10 flex flex-col justify-center border border-black/5 shadow-sm"
+              className="xl:col-span-4 bg-surface-lowest rounded-3xl p-10 flex flex-col justify-center border border-black/5 shadow-sm"
             >
               <Heart className="w-12 h-12 text-primary mb-8" />
               <h3 className="text-3xl font-serif text-foreground mb-6 leading-tight">Facial <br />Aesthetics</h3>
@@ -377,7 +378,7 @@ export default function Home() {
             {/* Long Service */}
             <motion.div 
               whileHover={{ y: -5 }}
-              className="md:col-span-8 bg-surface-lowest rounded-3xl p-12 flex flex-col md:flex-row gap-12 border border-black/5 shadow-sm"
+              className="xl:col-span-8 bg-surface-lowest rounded-3xl p-12 flex flex-col md:flex-row gap-12 border border-black/5 shadow-sm"
             >
               <div className="md:w-1/2 flex flex-col justify-center">
                 <ShieldCheck className="w-12 h-12 text-primary mb-8" />
@@ -415,6 +416,7 @@ export default function Home() {
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 40vw"
+                priority
               />
             </motion.div>
             <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
@@ -468,13 +470,13 @@ export default function Home() {
       {/* 6. BUSINESS BLOCK - GMB Integration */}
       <section className="py-32 px-6 bg-surface-low border-t border-primary/5">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-32">
+          <div className="grid grid-cols-1 xl:grid-cols-12 gap-16 xl:gap-32">
             
             <motion.div 
                initial={{ opacity: 0, x: -20 }}
                whileInView={{ opacity: 1, x: 0 }}
                viewport={{ once: true }}
-               className="lg:col-span-4"
+               className="xl:col-span-4"
             >
               <Link href="/" className="inline-block mb-10">
                 <span className="text-2xl font-serif font-bold text-primary tracking-tight">Aurora</span>
@@ -515,7 +517,7 @@ export default function Home() {
                initial={{ opacity: 0, y: 20 }}
                whileInView={{ opacity: 1, y: 0 }}
                viewport={{ once: true }}
-               className="lg:col-span-4 bg-surface-lowest p-10 rounded-3xl shadow-sm border border-black/5"
+               className="xl:col-span-4 bg-surface-lowest p-10 rounded-3xl shadow-sm border border-black/5"
             >
               <div className="flex items-center gap-3 mb-10">
                 <Clock className="w-6 h-6 text-primary" />
@@ -548,7 +550,7 @@ export default function Home() {
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="lg:col-span-4 rounded-3xl overflow-hidden min-h-[400px] relative bg-primary/5 border border-black/5 shadow-sm group"
+                className="xl:col-span-4 rounded-3xl overflow-hidden min-h-[400px] relative bg-primary/5 border border-black/5 shadow-sm group"
              >
                <Image 
                  src="https://cdn.hlorenzoz.com/dental_clinic_1_minimalist/clinic_interior.webp"

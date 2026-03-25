@@ -54,13 +54,14 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${plusJakartaSans.variable} ${manrope.variable} h-full antialiased`}
+      className={`${plusJakartaSans.variable} ${manrope.variable} h-full antialiased overflow-x-hidden`}
+      suppressHydrationWarning
     >
       <head>
         <link rel="preconnect" href="https://cdn.hlorenzoz.com" />
         <link rel="dns-prefetch" href="https://cdn.hlorenzoz.com" />
       </head>
-      <body className="min-h-full flex flex-col bg-[#F8FAFA] font-sans">
+      <body className="min-h-full flex flex-col bg-[#F8FAFA] font-sans overflow-x-hidden max-w-[100vw]">
         <Navigation />
         <main className="flex-grow">{children}</main>
         <Footer />

@@ -2,9 +2,9 @@ import Link from 'next/link';
 
 export function Footer() {
   return (
-    <footer className="bg-surface-low py-32 px-8 border-t border-primary/5">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-16 md:gap-24">
-        <div className="md:col-span-5">
+    <footer className="bg-surface-low py-32 px-4 md:px-6 lg:px-8 border-t border-primary/5">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-12 gap-8 lg:gap-24">
+        <div className="sm:col-span-2 xl:col-span-4">
           <Link href="/" className="text-3xl font-serif text-primary font-bold mb-8 block">
             Aurora<span className="text-secondary/60">.</span>
           </Link>
@@ -14,7 +14,7 @@ export function Footer() {
           </p>
         </div>
 
-        <div className="md:col-span-2">
+        <div className="xl:col-span-2">
           <h3 className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#006060] mb-8">The Practice</h3>
           <ul className="space-y-4 text-sm text-[#3F4948]">
             <li><Link href="/about" className="hover:text-primary transition-colors">Our Approach</Link></li>
@@ -24,7 +24,7 @@ export function Footer() {
           </ul>
         </div>
 
-        <div className="md:col-span-2">
+        <div className="xl:col-span-3">
            <h3 className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#006060] mb-8">Services</h3>
            <ul className="space-y-4 text-sm text-[#3F4948]">
              <li><Link href="/services/restorative" className="hover:text-primary transition-colors">Restorative Art</Link></li>
@@ -34,7 +34,7 @@ export function Footer() {
            </ul>
         </div>
 
-        <div className="md:col-span-3">
+        <div className="xl:col-span-3">
            <h3 className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#006060] mb-8">Sanctuary Access</h3>
            <ul className="space-y-4 text-sm text-[#3F4948]">
              <li><Link href="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link></li>
@@ -45,9 +45,9 @@ export function Footer() {
         </div>
       </div>
       
-      <div className="max-w-7xl mx-auto mt-32 pt-16 flex flex-col md:flex-row justify-between items-start md:items-center text-[10px] text-[#4F5958] uppercase tracking-[0.3em] font-medium border-t border-primary/10">
+      <div className="mt-24 pt-8 border-t border-primary/5 flex flex-col md:flex-row justify-between items-center gap-8 text-[11px] font-medium text-[#6E7979] uppercase tracking-widest overflow-hidden max-w-full">
         <p>© 2026 Aurora Sanctuary. Curated with Precision.</p>
-        <div className="mt-4 md:mt-0 flex flex-col md:flex-row gap-8">
+        <div className="mt-4 md:mt-0 flex flex-col md:flex-row gap-4 md:gap-6 lg:gap-8">
           <span>53 Brockenhurst Gardens, London NW7 2JY</span>
           <span>+44 20 8959 9392</span>
         </div>
