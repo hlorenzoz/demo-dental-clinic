@@ -15,6 +15,12 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   title: "Aurora Dental | The Clinical Sanctuary Mill Hill",
   description: "Advanced restorative & emergency dentistry in a calm, women-owned Aurora Sanctuary. LGBT-friendly and safe space.",
+  manifest: '/manifest.webmanifest',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'black-translucent',
+    title: 'Aurora Dental',
+  },
   openGraph: {
     title: "Aurora Dental Sanctuary | Mill Hill Dental Clinic",
     description: "Advanced restorative & emergency dentistry in a calm, inclusive environment.",
@@ -38,13 +44,19 @@ export const metadata: Metadata = {
     images: ["https://cdn.hlorenzoz.com/dental_clinic_1_minimalist/hero_aurora_v2.webp"],
   },
   icons: {
-    icon: "/favicon.svg",
-    apple: "/favicon.svg",
+    icon: [
+      { url: '/icons/icon-192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/icons/icon-512.png', sizes: '512x512', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/icons/icon-192.png', sizes: '192x192', type: 'image/png' },
+    ],
   },
 };
 
 import { Navigation } from "@/components/ui/Navigation";
 import { Footer } from "@/components/ui/Footer";
+import { PWAInstaller } from "@/components/pwa/PWAInstaller";
 
 export default function RootLayout({
   children,
@@ -60,11 +72,16 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://cdn.hlorenzoz.com" />
         <link rel="dns-prefetch" href="https://cdn.hlorenzoz.com" />
+        <meta name="theme-color" content="#006060" media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content="#004040" media="(prefers-color-scheme: dark)" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
       </head>
       <body className="min-h-full flex flex-col bg-[#F8FAFA] font-sans overflow-x-hidden max-w-[100vw]">
         <Navigation />
         <main className="flex-grow">{children}</main>
         <Footer />
+        <PWAInstaller />
       </body>
     </html>
   );
