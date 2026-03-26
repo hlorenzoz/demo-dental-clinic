@@ -22,7 +22,7 @@ export default function Home() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Aurora Dental Sanctuary - Mill Hill Clinic",
+    "name": "Demo Website - Aurora Dental Clinic",
     "image": "https://cdn.hlorenzoz.com/dental_clinic_1_minimalist/hero_aurora_v2.webp",
     "@id": "https://dental-clinic-1-minimalist.pages.dev/",
     "url": "https://dental-clinic-1-minimalist.pages.dev/",

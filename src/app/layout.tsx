@@ -13,25 +13,25 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Aurora Dental | The Clinical Sanctuary Mill Hill",
+  title: "Demo Website - Aurora Dental Clinic",
   description: "Advanced restorative & emergency dentistry in a calm, women-owned Aurora Sanctuary. LGBT-friendly and safe space.",
   manifest: '/manifest.webmanifest',
   appleWebApp: {
     capable: true,
     statusBarStyle: 'black-translucent',
-    title: 'Aurora Dental',
+    title: 'Demo Website',
   },
   openGraph: {
-    title: "Aurora Dental Sanctuary | Mill Hill Dental Clinic",
+    title: "Demo Website - Aurora Dental Clinic",
     description: "Advanced restorative & emergency dentistry in a calm, inclusive environment.",
     url: "https://dental-clinic-1-minimalist.pages.dev/",
-    siteName: "Aurora Dental Sanctuary",
+    siteName: "Demo Website - Aurora Dental Clinic",
     images: [
       {
         url: "https://cdn.hlorenzoz.com/dental_clinic_1_minimalist/hero_aurora_v2.webp",
         width: 1280,
         height: 1280,
-        alt: "Aurora Dental Sanctuary - Mill Hill Dental Clinic",
+        alt: "Demo Website - Aurora Dental Clinic",
       },
     ],
     locale: "en_GB",
@@ -39,13 +39,14 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Aurora Dental Sanctuary | Mill Hill Dental Clinic",
+    title: "Demo Website - Aurora Dental Clinic",
     description: "Advanced restorative & emergency dentistry in a calm, inclusive environment.",
     images: ["https://cdn.hlorenzoz.com/dental_clinic_1_minimalist/hero_aurora_v2.webp"],
   },
   icons: {
-    icon: "/favicon.svg",
-    apple: "/favicon.svg",
+    icon: "/favicon.svg?v=2",
+    shortcut: "/favicon.svg?v=2",
+    apple: "/favicon.svg?v=2",
   },
 };
 
@@ -65,6 +66,9 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
+        <link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml" />
+        <link rel="shortcut icon" href="/favicon.svg?v=2" />
+        <link rel="apple-touch-icon" href="/favicon.svg?v=2" />
         <link rel="preconnect" href="https://cdn.hlorenzoz.com" />
         <link rel="dns-prefetch" href="https://cdn.hlorenzoz.com" />
         <meta name="theme-color" content="#006060" media="(prefers-color-scheme: light)" />

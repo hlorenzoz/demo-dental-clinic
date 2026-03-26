@@ -2,8 +2,8 @@ import type { MetadataRoute } from 'next';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Aurora Dental Sanctuary',
-    short_name: 'Aurora Dental',
+    name: 'Demo Website - Aurora Dental Clinic',
+    short_name: 'Demo Website',
     description:
       'Advanced restorative & emergency dentistry in a calm, inclusive environment. Mill Hill, London NW7.',
     start_url: '/',
