@@ -10,8 +10,7 @@ const STATIC_ASSETS = [
   '/',
   '/offline',
   '/manifest.webmanifest',
-  '/icons/icon-192.png',
-  '/icons/icon-512.png',
+  '/favicon.svg',
 ];
 
 // ─── Install ─────────────────────────────────────────────────────────────────

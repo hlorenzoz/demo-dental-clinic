@@ -53,8 +53,8 @@ export function PWAInstaller() {
                  flex items-center gap-4 px-5 py-4 animate-in slide-in-from-bottom-4 duration-300"
     >
       {/* Icon */}
-      <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center flex-shrink-0">
-        <span className="text-white font-serif font-bold text-xl">A</span>
+      <div className="w-12 h-12 rounded-xl overflow-hidden flex-shrink-0">
+        <img src="/favicon.svg" alt="Aurora Dental Logo" className="w-full h-full object-cover" />
       </div>
 
       {/* Text */}
