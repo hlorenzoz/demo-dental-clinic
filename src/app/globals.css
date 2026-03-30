@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f8fafa;
+  --foreground: #191c1d;
+  --primary: #004c4c;
+  --primary-container: #006666;
+  --surface: #f8fafa;
+  --surface-low: #f2f4f4;
+  --surface-lowest: #ffffff;
+  --tertiary: #6a3516;
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-container: var(--primary-container);
+  --color-surface: var(--surface);
+  --color-surface-low: var(--surface-low);
+  --color-surface-lowest: var(--surface-lowest);
+  --color-tertiary: var(--tertiary);
+  
+  --font-serif: var(--font-manrope);
+  --font-sans: var(--font-plus-jakarta-sans);
+  
+  --color-border: var(--primary)/20;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-foreground antialiased font-sans;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv11";
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/70 backdrop-blur-xl shadow-[0_12px_40px_rgba(0,101,101,0.06)];
+  }
+  
+  .glass-teal {
+    @apply bg-primary/10 backdrop-blur-xl border-none;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Editorial Asymmetry Utility */
+  .editorial-offset {
+    @apply relative -top-12 lg:-top-20 z-10;
+  }
+}
